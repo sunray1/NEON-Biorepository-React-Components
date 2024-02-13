@@ -17,6 +17,6 @@ import 'core-js/es/string/starts-with';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import App from './App_testing';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('neon-header'));

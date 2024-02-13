@@ -45,6 +45,7 @@
     "react/function-component-definition": 0,
     "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
     "react/jsx-props-no-spreading": 0,
+    "react/self-closing-comp": "off",
     "no-restricted-exports": 0,
     "no-shadow": "off",
     "no-use-before-define": "off"
