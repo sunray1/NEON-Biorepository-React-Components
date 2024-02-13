@@ -39,25 +39,25 @@ import ResetIcon from '@material-ui/icons/Autorenew';
 
 import Skeleton from '@material-ui/lab/Skeleton';
 
-import REMOTE_ASSETS from './lib_components/remoteAssetsMap/remoteAssetsMap';
-import Theme, { COLORS } from './lib_components/components/Theme/Theme';
-import NeonHeader from './lib_components/components/NeonHeader/NeonHeader';
-import NeonFooter from './lib_components/components/NeonFooter/NeonFooter';
-import NeonEnvironment from './lib_components/components/NeonEnvironment/NeonEnvironment';
-import NeonContext, { FETCH_STATUS } from './lib_components/components/NeonContext/NeonContext';
-import BrowserWarning from './lib_components/components/NeonPage/BrowserWarning';
-import LiferayNotifications from './lib_components/components/NeonPage/LiferayNotifications';
-import DrupalAssetService from './lib_components/service/DrupalAssetService';
+import REMOTE_ASSETS from '../lib_components/remoteAssetsMap/remoteAssetsMap';
+import Theme, { COLORS } from '../lib_components/components/Theme/Theme';
+import NeonHeader from '../lib_components/components/NeonHeader/NeonHeader';
+import NeonFooter from '../lib_components/components/NeonFooter/NeonFooter';
+import NeonEnvironment from '../lib_components/components/NeonEnvironment/NeonEnvironment';
+import NeonContext, { FETCH_STATUS } from '../lib_components/components/NeonContext/NeonContext';
+import BrowserWarning from '../lib_components/components/NeonPage/BrowserWarning';
+import LiferayNotifications from '../lib_components/components/NeonPage/LiferayNotifications';
+import DrupalAssetService from '../lib_components/service/DrupalAssetService';
 
-import { getJson } from './lib_components/util/rxUtil';
+import { getJson } from '../lib_components/util/rxUtil';
 import {
   generateNotificationId,
   getLiferayNotificationsApiPath,
-} from './lib_components/util/liferayNotificationsUtil';
+} from '../lib_components/util/liferayNotificationsUtil';
 
-import NeonLogo from './lib_components/images/NSF-NEON-logo.png';
+import NeonLogo from '../lib_components/images/NSF-NEON-logo.png';
 
-import './lib_components/components/NeonPage/styles.css';
+import '../lib_components/components/NeonPage/styles.css';
 
 const DRUPAL_THEME_CSS = REMOTE_ASSETS.DRUPAL_THEME_CSS.KEY;
 
