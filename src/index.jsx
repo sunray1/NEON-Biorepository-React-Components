@@ -17,6 +17,6 @@ import 'core-js/es/string/starts-with';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import NeonPageHeader from './biorepo_components/NeonPageHeader';
+import App from './App';
 
-ReactDOM.render(<NeonPageHeader />, document.getElementById('neon-header'));
+ReactDOM.render(<App />, document.getElementById('neon-header'));

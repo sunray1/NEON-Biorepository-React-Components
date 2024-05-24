@@ -1,0 +1,7 @@
+{
+  "/NEON-Biorepository-React-Components/build/": [
+    { "name": "Breadcrumb 1", "href": "/bc1" },
+    { "name": "Breadcrumb 2", "href": "/bc2" },
+    { "name": "My Neon Page" }
+  ]
+}
