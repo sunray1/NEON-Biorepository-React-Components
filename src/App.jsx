@@ -30,7 +30,6 @@ export default function App() {
     fetchBreadcrumbs();
   }, []);
 
-  // Get breadcrumbs from json based on pathname
   const sidebarLinks = [
     {
       name: 'Home',
