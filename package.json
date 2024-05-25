@@ -3,7 +3,7 @@
   "version": "2.8.0",
   "main": "./lib/index.js",
   "private": true,
-  "homepage": "./",
+  "homepage": "./neon-react/",
   "dependencies": {
     "@date-io/moment": "^1.3.13",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
