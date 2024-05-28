@@ -1,4 +1,5 @@
 import React, {
+  { useRef }
   useState,
   useEffect,
 } from 'react';
@@ -12,15 +13,17 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
+import FullWidthVisualization from 'portal-core-components/lib/components/FullWidthVisualization';
 
 import RightIcon from '@material-ui/icons/ChevronRight';
 
 import Theme from '../lib_components/components/Theme/Theme';
 
-export default function BiorepoHomePageContent() {
+const myVizRef = useRef(null);
 
+export default function BiorepoHomePageContent() {
   return (
-    <Grid container rowSpacing={8} columnSpacing={4}>
+    <Grid container spacing={10}>
       <Grid item xs={4}>
         <Card variant="outlined">
           <CardMedia
@@ -166,5 +169,9 @@ export default function BiorepoHomePageContent() {
         </Card>
       </Grid>
     </Grid>
+
+    <FullWidthVisualization vizRef={myVizRef}>
+      <div ref={myVizRef} />
+    </FullWidthVisualization>
   );
 }
