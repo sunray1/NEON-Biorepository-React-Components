@@ -64,7 +64,7 @@ async function modifyHtml() {
             const currentDateTime = new Date().toLocaleString();
             const updateInfo = `<!--React last updated: ${currentDateTime}-->\n`;
             const finalContent = updateInfo + modifiedContent;
-            console.log(finalContent);
+
             // Insert modified content into the target HTML file
             const targetHtml = await fs.readFile(targetHtmlFilePath, 'utf8');
             const updatedHtml = targetHtml.replace(/<!--React last updated[\s\S]*?.css" rel="stylesheet">/, finalContent);
