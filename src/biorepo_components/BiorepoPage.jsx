@@ -3,9 +3,6 @@ import React, {
   useEffect,
 } from 'react';
 
-import HomeIcon from '@material-ui/icons/Home';
-import Typography from '@material-ui/core/Typography';
-
 import NeonPage from '../lib_components/components/NeonPage/NeonPage';
 
 export default function BiorepoPage() {
@@ -32,23 +29,42 @@ export default function BiorepoPage() {
 
   const sidebarLinks = [
     {
-      name: 'Home',
-      pageTitle: 'Core Components',
-      icon: HomeIcon,
-      hash: 'http://localhost/NEON-Biorepository-React-Components/build/',
+      name: 'Data Portal',
+      hash: 'https://www.neonscience.org/data',
     },
     {
-      name: 'Search',
-      hash: 'https://biorepo.neonscience.org/portal/neon/search/index.php',
+      name: 'Sample Portal',
+      hash: 'index.php',
+    },
+    {
+      name: 'Themes',
+      hash: 'https://www.neonscience.org/data-samples/data-themes',
+    },
+    {
+      name: 'Collection Methods',
+      hash: 'https://www.neonscience.org/data-collection',
+    },
+    {
+      name: 'Notifications',
+      hash: 'https://www.neonscience.org/data-samples/data-notifications',
+    },
+    {
+      name: 'Spatial Data & Maps',
+      hash: 'https://www.neonscience.org/data-samples/data/spatial-data-maps',
+    },
+    {
+      name: 'Document Library',
+      hash: 'https://data.neonscience.org/documents',
     },
   ];
 
   return (
     <NeonPage
-      title="NEON Data Portal Core Components"
+      title="NEON Biorepository Sample Portal at ASU"
       breadcrumbs={breadcrumbs}
       breadcrumbHomeHref="https://www.neonscience.org/"
       sidebarLinks={sidebarLinks}
+      sidebarTitle="Data & Samples"
       useCoreAuth
     >
     </NeonPage>
