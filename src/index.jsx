@@ -17,6 +17,8 @@ import 'core-js/es/string/starts-with';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import BiorepoPage from './biorepo_components/BiorepoPage';
+import BiorepoHomePageContent from './biorepo_components/BiorepoHomePageContent';
 
-ReactDOM.render(<App />, document.getElementById('neon-page'));
+ReactDOM.render(<BiorepoPage />, document.getElementById('biorepo-page'));
+ReactDOM.render(<BiorepoHomePageContent />, document.getElementById('biorepo-home-page-content'));

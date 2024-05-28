@@ -9,6 +9,22 @@ const targetDir = '/mnt/c/xampp/htdocs/NEON-Biorepository/neon-react';
 const indexFilePath = '/mnt/c/xampp/htdocs/NEON-Biorepository-React-Components/build/index.html';
 const targetHtmlFilePath = '/mnt/c/xampp/htdocs/NEON-Biorepository/includes/head.php';
 
+// Function to delete all files and folders in the target directory except for biorepo_lib
+async function cleanTargetDir() {
+    try {
+        const files = await fs.readdir(targetDir);
+        for (const file of files) {
+            const targetPath = path.join(targetDir, file);
+            if (file !== 'biorepo_lib') {
+                await fs.remove(targetPath);
+                console.log(`Deleted ${targetPath}`);
+            }
+        }
+    } catch (err) {
+        console.error('Error cleaning target directory:', err);
+    }
+}
+
 // Function to copy files and directories excluding index.html
 async function copyFiles() {
     try {
@@ -44,9 +60,14 @@ async function modifyHtml() {
             // Replace content if needed (example: replace 'old-text' with 'new-text')
             const modifiedContent = extractedContent.replace(/\.\/neon-react\//g, '<?php echo $CLIENT_ROOT; ?>/neon-react/');
 
+            // Get the current date and time
+            const currentDateTime = new Date().toLocaleString();
+            const updateInfo = `<!--React last updated: ${currentDateTime}-->\n`;
+            const finalContent = updateInfo + modifiedContent;
+            console.log(finalContent);
             // Insert modified content into the target HTML file
             const targetHtml = await fs.readFile(targetHtmlFilePath, 'utf8');
-            const updatedHtml = targetHtml.replace(/<meta name="viewport"[\s\S]*?main.css" rel="stylesheet">/, modifiedContent);
+            const updatedHtml = targetHtml.replace(/<!--React last updated[\s\S]*?.css" rel="stylesheet">/, finalContent);
             await fs.writeFile(targetHtmlFilePath, updatedHtml);
 
             console.log('HTML content modified and inserted successfully.');
@@ -60,6 +81,7 @@ async function modifyHtml() {
 
 // Run the functions
 (async () => {
+    await cleanTargetDir();
     await copyFiles();
     await modifyHtml();
 })();

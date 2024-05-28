@@ -6,9 +6,9 @@ import React, {
 import HomeIcon from '@material-ui/icons/Home';
 import Typography from '@material-ui/core/Typography';
 
-import NeonPage from './lib_components/components/NeonPage/NeonPage';
+import NeonPage from '../lib_components/components/NeonPage/NeonPage';
 
-export default function App() {
+export default function BiorepoPage() {
   // Get breadcrumbs from json based on pathname
   const [breadcrumbs, setBreadcrumbs] = useState([]);
   useEffect(() => {
