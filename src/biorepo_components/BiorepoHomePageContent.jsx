@@ -1,10 +1,6 @@
-import React, {
-  { useRef }
-  useState,
-  useEffect,
-} from 'react';
+import React from 'react';
 
-import Box from '@material-ui/core/Box';
+import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
 import Typography from '@material-ui/core/Typography';
@@ -13,165 +9,210 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import FullWidthVisualization from 'portal-core-components/lib/components/FullWidthVisualization';
-
 import RightIcon from '@material-ui/icons/ChevronRight';
 
 import Theme from '../lib_components/components/Theme/Theme';
 
-const myVizRef = useRef(null);
+const useStyles = makeStyles((theme) => ({
+  solid_blue: {
+    position: 'relative',
+    backgroundColor: '#002C77',
+    color: '#fff !important',
+    marginTop: '10em',
+    right: '74px',
+    '&::before': {
+      content: '""',
+      position: 'absolute',
+      backgroundImage: 'url(neon-react/biorepo_lib/blue_border.png)',
+      backgroundPosition: '50% 0',
+      backgroundRepeat: 'repeat no-repeat',
+      top: '-60px',
+      height: '60px',
+      width: '100%',
+    },
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      backgroundImage: 'url(neon-react/biorepo_lib/blue_border.png)',
+      backgroundPosition: '50% 0',
+      backgroundRepeat: 'repeat no-repeat',
+      transform: 'rotate(180deg)',
+      '-webkit-transform': 'rotate(180deg)',
+      '-ms-transform': 'rotate(180deg)',
+      bottom: '-60px',
+      height: '60px',
+      width: '100%',
+    },
+  },
+}));
 
 export default function BiorepoHomePageContent() {
-  return (
-    <Grid container spacing={10}>
-      <Grid item xs={4}>
-        <Card variant="outlined">
-          <CardMedia
-            component="img"
-            image="images/home-card-images/20210913NEONBioRepository_057.jpg"
-            title="Sample Types"
-            height="auto"
-            loading="lazy"
-          />
-          <CardContent>
-            <Typography variant="h5" component="h2">
-              Sample Types
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              Lorem ipsum blahblahblah
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button variant="outlined" size="large" endIcon={<RightIcon />} href="https://biorepo.neonscience.org/portal/collections/misc/collprofiles.php">
-              Browse Sample Types
-            </Button>
-          </CardActions>
-        </Card>
-      </Grid>
-      <Grid item xs={4}>
-        <Card variant="outlined">
-          <CardMedia
-            component="img"
-            image="images/home-card-images/20210913NEONBioRepository_165.jpg"
-            title="Sample Search"
-            height="auto"
-            loading="lazy"
-          />
-          <CardContent>
-            <Typography variant="h5" component="h2">
-              Search for Samples
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              Lorem ipsum blahblahblah
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button variant="outlined" size="large" endIcon={<RightIcon />} href="https://biorepo.neonscience.org/portal/neon/search/index.php">
-              Search Samples
-            </Button>
-          </CardActions>
-        </Card>
-      </Grid>
-      <Grid item xs={4}>
-        <Card variant="outlined">
-          <CardMedia
-            component="img"
-            image="images/home-card-images/20210913NEONBioRepository_088.jpg"
-            title="Request Samples"
-            height="auto"
-            loading="lazy"
-          />
-          <CardContent>
-            <Typography variant="h5" component="h2">
-              Request Samples
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              Lorem ipsum blahblahblah
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button variant="outlined" size="large" endIcon={<RightIcon />} href="https://biorepo.neonscience.org/portal/misc/samplerequest.php">
-              Request Samples
-            </Button>
-          </CardActions>
-        </Card>
-      </Grid>
-      <Grid item xs={4}>
-        <Card variant="outlined">
-          <CardMedia
-            component="img"
-            image="images/home-card-images/IMG_9517.jpg"
-            title="Guidelines & Policies"
-            height="auto"
-            loading="lazy"
-          />
-          <CardContent>
-            <Typography variant="h5" component="h2">
-              Guidelines & Policies
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              Lorem ipsum blahblahblah
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button variant="outlined" size="large" endIcon={<RightIcon />} href="https://biorepo.neonscience.org/portal/misc/samplepolicy.php">
-              Read Guidelines
-            </Button>
-          </CardActions>
-        </Card>
-      </Grid>
-      <Grid item xs={4}>
-        <Card variant="outlined">
-          <CardMedia
-            component="img"
-            image="images/home-card-images/IMG_9534.jpg"
-            title="Contact Biorepository"
-            height="auto"
-            loading="lazy"
-          />
-          <CardContent>
-            <Typography variant="h5" component="h2">
-              Contact Biorepository
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              Lorem ipsum blahblahblah
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button variant="outlined" size="large" endIcon={<RightIcon />} href="#">
-              Contact Us
-            </Button>
-          </CardActions>
-        </Card>
-      </Grid>
-      <Grid item xs={4}>
-        <Card variant="outlined">
-          <CardMedia
-            component="img"
-            image="images/home-card-images/20210913NEONBioRepository_244.jpg"
-            title="Something Else"
-            height="auto"
-            loading="lazy"
-          />
-          <CardContent>
-            <Typography variant="h5" component="h2">
-              Something Else
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              Lorem ipsum blahblahblah
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button variant="outlined" size="large" endIcon={<RightIcon />} href="#">
-              Something Else
-            </Button>
-          </CardActions>
-        </Card>
-      </Grid>
-    </Grid>
+  const classes = useStyles(Theme);
 
-    <FullWidthVisualization vizRef={myVizRef}>
-      <div ref={myVizRef} />
-    </FullWidthVisualization>
+  return (
+    <>
+      <div id="callout-cards">
+        <Grid container spacing={7}>
+          <Grid item xs={4}>
+            <Card variant="outlined">
+              <CardMedia
+                component="img"
+                image="images/home-card-images/20210913NEONBioRepository_057.jpg"
+                title="Sample Types"
+                height="auto"
+                loading="lazy"
+              />
+              <CardContent>
+                <Typography variant="h5" component="h2">
+                  Sample Types
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  Lorem ipsum.
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button variant="outlined" size="large" endIcon={<RightIcon />} href="https://biorepo.neonscience.org/portal/collections/misc/collprofiles.php">
+                  Browse Sample Types
+                </Button>
+              </CardActions>
+            </Card>
+          </Grid>
+          <Grid item xs={4}>
+            <Card variant="outlined">
+              <CardMedia
+                component="img"
+                image="images/home-card-images/20210913NEONBioRepository_165.jpg"
+                title="Sample Search"
+                height="auto"
+                loading="lazy"
+              />
+              <CardContent>
+                <Typography variant="h5" component="h2">
+                  Search for Samples
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  Lorem ipsum blahblahblah
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button variant="outlined" size="large" endIcon={<RightIcon />} href="https://biorepo.neonscience.org/portal/neon/search/index.php">
+                  Search Samples
+                </Button>
+              </CardActions>
+            </Card>
+          </Grid>
+          <Grid item xs={4}>
+            <Card variant="outlined">
+              <CardMedia
+                component="img"
+                image="images/home-card-images/20210913NEONBioRepository_088.jpg"
+                title="Request Samples"
+                height="auto"
+                loading="lazy"
+              />
+              <CardContent>
+                <Typography variant="h5" component="h2">
+                  Request Samples
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  Lorem ipsum blahblahblah
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button variant="outlined" size="large" endIcon={<RightIcon />} href="https://biorepo.neonscience.org/portal/misc/samplerequest.php">
+                  Request Samples
+                </Button>
+              </CardActions>
+            </Card>
+          </Grid>
+          <Grid item xs={4}>
+            <Card variant="outlined">
+              <CardMedia
+                component="img"
+                image="images/home-card-images/IMG_9517.jpg"
+                title="Guidelines & Policies"
+                height="auto"
+                loading="lazy"
+              />
+              <CardContent>
+                <Typography variant="h5" component="h2">
+                  Guidelines & Policies
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  Lorem ipsum blahblahblah
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button variant="outlined" size="large" endIcon={<RightIcon />} href="https://biorepo.neonscience.org/portal/misc/samplepolicy.php">
+                  Read Guidelines
+                </Button>
+              </CardActions>
+            </Card>
+          </Grid>
+          <Grid item xs={4}>
+            <Card variant="outlined">
+              <CardMedia
+                component="img"
+                image="images/home-card-images/IMG_9534.jpg"
+                title="Contact Biorepository"
+                height="auto"
+                loading="lazy"
+              />
+              <CardContent>
+                <Typography variant="h5" component="h2">
+                  Contact Biorepository
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  Lorem ipsum blahblahblah
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button variant="outlined" size="large" endIcon={<RightIcon />} href="#">
+                  Contact Us
+                </Button>
+              </CardActions>
+            </Card>
+          </Grid>
+          <Grid item xs={4}>
+            <Card variant="outlined">
+              <CardMedia
+                component="img"
+                image="images/home-card-images/20210913NEONBioRepository_244.jpg"
+                title="Something Else"
+                height="auto"
+                loading="lazy"
+              />
+              <CardContent>
+                <Typography variant="h5" component="h2">
+                  Something Else
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  Lorem ipsum blahblahblah
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button variant="outlined" size="large" endIcon={<RightIcon />} href="#">
+                  Something Else
+                </Button>
+              </CardActions>
+            </Card>
+          </Grid>
+        </Grid>
+      </div>
+      <div id="statistics" className={classes.solid_blue}>
+        <Grid container spacing={4}>
+          <Grid item xs={6}>
+            <Typography variant="body1" color="white" component="p">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </Typography>
+          </Grid>
+          <Grid item xs={6}>
+            <Typography variant="body1" color="white" component="p">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </Typography>
+          </Grid>
+        </Grid>
+      </div>
+    </>
   );
 }
