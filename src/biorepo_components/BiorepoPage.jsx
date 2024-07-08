@@ -60,7 +60,7 @@ export default function BiorepoPage() {
 
   return (
     <NeonPage
-      title="NEON Biorepository Sample Portal at ASU"
+      title=""
       breadcrumbs={breadcrumbs}
       breadcrumbHomeHref="https://www.neonscience.org/"
       sidebarLinks={sidebarLinks}

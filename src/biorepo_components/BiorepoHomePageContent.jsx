@@ -18,10 +18,67 @@ import RightIcon from '@material-ui/icons/ChevronRight';
 import Theme from '../lib_components/components/Theme/Theme';
 
 const useStyles = makeStyles((theme) => ({
+  heroTitle: {
+    width: '100%',
+    maxWidth: '1204px',
+    overflow: 'hidden',
+    position: 'relative',
+  },
+  heroImage: {
+    width: '100%',
+    height: 'auto',
+    objectFit: 'cover',
+    objectPosition: 'center',
+  },
+  heroContent: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    zIndex: 1,
+    width: '50%',
+    height: '63%',
+    color: '#fff',
+  },
+  lightBrownDiv: {
+    backgroundColor: '#4B372E',
+    height: '65%',
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    paddingLeft: '5%',
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      backgroundImage: 'url(neon-react/biorepo_lib/hero-edge-lb.png)',
+      top: 0,
+      left: 'auto',
+      right: '-30px',
+      height: '65%',
+      width: '30px',
+    },
+  },
+  darkBrownDiv: {
+    backgroundColor: '#352723',
+    height: '35%',
+    width: '100%',
+    display: 'flex',
+    paddingLeft: '5%',
+    alignItems: 'center',
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      backgroundImage: 'url(neon-react/biorepo_lib/hero-edge-db.png)',
+      left: 'auto',
+      right: '-30px',
+      height: '35%',
+      width: '30px',
+    },
+  },
   blueDiv: {
     position: 'relative',
     backgroundColor: '#002C77',
-    color: '#fff !important',
+    color: '#fff',
     marginTop: '10em',
     right: '74px',
     '&::before': {
@@ -55,6 +112,16 @@ const useStyles = makeStyles((theme) => ({
   statistics: {
     textAlign: 'center',
   },
+  alert: {
+    marginTop: '3em',
+    borderBottomWidth: '2px',
+    borderColor: '#F0AB00',
+    borderLeftWidth: '20px',
+    borderRightWidth: '2px',
+    borderStyle: 'solid',
+    borderTopWidth: '2px',
+    padding: '10px',
+  },
 }));
 
 export default function BiorepoHomePageContent() {
@@ -62,7 +129,85 @@ export default function BiorepoHomePageContent() {
 
   return (
     <>
-      <div id="callout-cards">
+      <div id="hero-title" className={classes.heroTitle}>
+        <div id="hero-image" className={classes.heroImage}>
+          <img
+            src="images/home-card-images/IMG_9525.jpg"
+            width="1204"
+            height="500"
+            alt="Fluid Preserved Samples at the NEON Biorepository"
+            loading="lazy"
+          />
+        </div>
+        <div id="hero-content" className={classes.heroContent}>
+          <div id="content-title" className={classes.lightBrownDiv}>
+            <Typography variant="h3" color="white" component="h3">
+              NEON Biorepository Sample Portal at ASU
+            </Typography>
+            <Typography variant="h6" color="white" component="h6">
+              Something here about what the site serves
+            </Typography>
+          </div>
+          <div id="content-sub" className={classes.darkBrownDiv}>
+            <div style={{ marginRight: '12px' }}>
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="48" height="48" rx="3" fill="#fff">
+                </rect>
+                <path d="M30 24l-12-8v16l12-8z" fill="#0073CF" stroke="#0073CF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
+              </svg>
+            </div>
+            <div>
+              <p style={{
+                fontFamily: '"Inter",sans-serif',
+                lineHeight: '1.6',
+                fontWeight: 'bold',
+                letterSpacing: '0.2em',
+                textTransform: 'uppercase',
+                color: '#C2DEEA',
+                fontSize: '0.8125rem',
+                marginTop: 0,
+                marginBottom: 0,
+              }}
+              >
+                Watch
+              </p>
+              <p style={{
+                fontFamily: '"Inter",sans-serif',
+                lineHeight: '1.25',
+                fontSize: '1.5rem',
+                marginTop: 0,
+                marginBottom: 0,
+              }}
+              >
+                <a href="https://www.youtube.com/watch?v=-gHqSPJOETQ" style={{ color: '#fff' }}>
+                  A Tour of NEON&apos;s Biorepository
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={classes.alert}>
+        <p>
+          A new
+          {' '}
+          <a href="https://www.nsf.gov/pubs/2024/nsf24069/nsf24069.jsp">
+            NSF DCL
+            {' '}
+            presents an opportunity to leverage the NEON Biorepository collections
+          </a>
+          . Please
+          {' '}
+          <a href="mailto:biorepo@asu.edu">
+            contact us
+          </a>
+          {' '}
+          with any questions or for information needed for
+          {' '}
+          potential innovative use! We are here to support you.
+        </p>
+      </div>
+      <div id="callout-cards" style={{ marginTop: '3em' }}>
         <Grid container spacing={7}>
           <Grid item xs={4}>
             <Card variant="outlined">
