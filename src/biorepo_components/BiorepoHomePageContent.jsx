@@ -1,4 +1,8 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faBug, faDatabase, faImage, faCalendarDays, faFlask, faEarthAmericas,
+} from '@fortawesome/free-solid-svg-icons';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -14,7 +18,7 @@ import RightIcon from '@material-ui/icons/ChevronRight';
 import Theme from '../lib_components/components/Theme/Theme';
 
 const useStyles = makeStyles((theme) => ({
-  solid_blue: {
+  blueDiv: {
     position: 'relative',
     backgroundColor: '#002C77',
     color: '#fff !important',
@@ -44,6 +48,13 @@ const useStyles = makeStyles((theme) => ({
       width: '100%',
     },
   },
+  faIcon: {
+    color: '#ffffff',
+    fontSize: '5rem',
+  },
+  statistics: {
+    textAlign: 'center',
+  },
 }));
 
 export default function BiorepoHomePageContent() {
@@ -63,7 +74,7 @@ export default function BiorepoHomePageContent() {
                 loading="lazy"
               />
               <CardContent>
-                <Typography variant="h5" component="h2">
+                <Typography component="h2">
                   Sample Types
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
@@ -87,7 +98,7 @@ export default function BiorepoHomePageContent() {
                 loading="lazy"
               />
               <CardContent>
-                <Typography variant="h5" component="h2">
+                <Typography component="h2">
                   Search for Samples
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
@@ -111,7 +122,7 @@ export default function BiorepoHomePageContent() {
                 loading="lazy"
               />
               <CardContent>
-                <Typography variant="h5" component="h2">
+                <Typography component="h2">
                   Request Samples
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
@@ -135,7 +146,7 @@ export default function BiorepoHomePageContent() {
                 loading="lazy"
               />
               <CardContent>
-                <Typography variant="h5" component="h2">
+                <Typography component="h2">
                   Guidelines & Policies
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
@@ -159,7 +170,7 @@ export default function BiorepoHomePageContent() {
                 loading="lazy"
               />
               <CardContent>
-                <Typography variant="h5" component="h2">
+                <Typography component="h2">
                   Contact Biorepository
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
@@ -183,7 +194,7 @@ export default function BiorepoHomePageContent() {
                 loading="lazy"
               />
               <CardContent>
-                <Typography variant="h5" component="h2">
+                <Typography component="h2">
                   Something Else
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
@@ -199,19 +210,50 @@ export default function BiorepoHomePageContent() {
           </Grid>
         </Grid>
       </div>
-      <div id="statistics" className={classes.solid_blue}>
-        <Grid container spacing={4}>
-          <Grid item xs={6}>
-            <Typography variant="body1" color="white" component="p">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </Typography>
+      <div id="blue-div" className={classes.blueDiv}>
+        <div id="statistics-container" style={{ position: 'relative', left: '74px' }}>
+          <Typography variant="h3" color="white" component="h3">
+            Statistics
+          </Typography>
+          <Grid id="statistics" container spacing={0.5} justifyContent="center" className={classes.statistics}>
+            <Grid item xs={2}>
+              <FontAwesomeIcon icon={faBug} className={classes.faIcon} />
+              <Typography variant="h6" color="white" component="h6">
+                1,000 species
+              </Typography>
+            </Grid>
+            <Grid item xs={2}>
+              <FontAwesomeIcon icon={faDatabase} className={classes.faIcon} />
+              <Typography variant="h6" color="white" component="h6">
+                100,000 records
+              </Typography>
+            </Grid>
+            <Grid item xs={2}>
+              <FontAwesomeIcon icon={faImage} className={classes.faIcon} />
+              <Typography variant="h6" color="white" component="h6">
+                5,000 images
+              </Typography>
+            </Grid>
+            <Grid item xs={2}>
+              <FontAwesomeIcon icon={faCalendarDays} className={classes.faIcon} />
+              <Typography variant="h6" color="white" component="h6">
+                5 years
+              </Typography>
+            </Grid>
+            <Grid item xs={2}>
+              <FontAwesomeIcon icon={faFlask} className={classes.faIcon} />
+              <Typography variant="h6" color="white" component="h6">
+                20 sample types
+              </Typography>
+            </Grid>
+            <Grid item xs={2}>
+              <FontAwesomeIcon icon={faEarthAmericas} className={classes.faIcon} />
+              <Typography variant="h6" color="white" component="h6">
+                81 sites
+              </Typography>
+            </Grid>
           </Grid>
-          <Grid item xs={6}>
-            <Typography variant="body1" color="white" component="p">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </Typography>
-          </Grid>
-        </Grid>
+        </div>
       </div>
     </>
   );
