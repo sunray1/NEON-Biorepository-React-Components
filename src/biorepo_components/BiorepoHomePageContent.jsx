@@ -218,38 +218,38 @@ export default function BiorepoHomePageContent() {
           <Grid id="statistics" container spacing={0.5} justifyContent="center" className={classes.statistics}>
             <Grid item xs={2}>
               <FontAwesomeIcon icon={faBug} className={classes.faIcon} />
-              <Typography variant="h6" color="white" component="h6">
-                1,000 species
+              <Typography id="speciesCount" variant="h6" color="white" component="h6">
+                0
               </Typography>
             </Grid>
             <Grid item xs={2}>
               <FontAwesomeIcon icon={faDatabase} className={classes.faIcon} />
-              <Typography variant="h6" color="white" component="h6">
-                100,000 records
+              <Typography id="recordCount" variant="h6" color="white" component="h6">
+                0
               </Typography>
             </Grid>
             <Grid item xs={2}>
               <FontAwesomeIcon icon={faImage} className={classes.faIcon} />
-              <Typography variant="h6" color="white" component="h6">
-                5,000 images
+              <Typography id="imageCount" variant="h6" color="white" component="h6">
+                0
               </Typography>
             </Grid>
             <Grid item xs={2}>
               <FontAwesomeIcon icon={faCalendarDays} className={classes.faIcon} />
-              <Typography variant="h6" color="white" component="h6">
-                5 years
+              <Typography id="yearCount" variant="h6" color="white" component="h6">
+                0
               </Typography>
             </Grid>
             <Grid item xs={2}>
               <FontAwesomeIcon icon={faFlask} className={classes.faIcon} />
-              <Typography variant="h6" color="white" component="h6">
-                20 sample types
+              <Typography id="sampleTypeCount" variant="h6" color="white" component="h6">
+                0
               </Typography>
             </Grid>
             <Grid item xs={2}>
               <FontAwesomeIcon icon={faEarthAmericas} className={classes.faIcon} />
-              <Typography variant="h6" color="white" component="h6">
-                81 sites
+              <Typography id="siteCount" variant="h6" color="white" component="h6">
+                0
               </Typography>
             </Grid>
           </Grid>
