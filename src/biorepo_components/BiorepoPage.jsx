@@ -60,7 +60,6 @@ export default function BiorepoPage() {
 
   return (
     <NeonPage
-      title=""
       breadcrumbs={breadcrumbs}
       breadcrumbHomeHref="https://www.neonscience.org/"
       sidebarLinks={sidebarLinks}
