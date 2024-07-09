@@ -18,7 +18,7 @@ import RightIcon from '@material-ui/icons/ChevronRight';
 import Theme from '../lib_components/components/Theme/Theme';
 import SiteMap from '../lib_components/components/SiteMap/SiteMap';
 
-const CLIENT_ROOT = 'http://localhost/NEON-Biorepository';
+const CLIENT_ROOT = 'https://biokic4.rc.asu.edu/neon/portal';
 
 const useStyles = makeStyles((theme) => ({
   heroTitle: {

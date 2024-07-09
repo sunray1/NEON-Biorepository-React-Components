@@ -1297,7 +1297,7 @@ export const getHref = (key, arg = null) => {
   ];
 
   const EXPLORE_DATA_PRODUCTS_BASE = RouteService.getDataProductExplorePath();
-  const CLIENT_ROOT = 'http://localhost/NEON-Biorepository';
+  const CLIENT_ROOT = 'https://biokic4.rc.asu.edu/neon/portal';
   const EXPLORE_SAMPLE_PRODUCTS_BASE = `${CLIENT_ROOT}/collections/list.php`;
   if ((arg || '').length === 0) { return '#'; }
   switch (key) {
