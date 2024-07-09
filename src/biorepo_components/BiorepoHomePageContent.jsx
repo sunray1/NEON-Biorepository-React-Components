@@ -16,6 +16,9 @@ import CardMedia from '@material-ui/core/CardMedia';
 import RightIcon from '@material-ui/icons/ChevronRight';
 
 import Theme from '../lib_components/components/Theme/Theme';
+import SiteMap from '../lib_components/components/SiteMap/SiteMap';
+
+const CLIENT_ROOT = 'http://localhost/NEON-Biorepository';
 
 const useStyles = makeStyles((theme) => ({
   heroTitle: {
@@ -219,7 +222,7 @@ export default function BiorepoHomePageContent() {
                 loading="lazy"
               />
               <CardContent>
-                <Typography component="h2">
+                <Typography component="h1">
                   Sample Types
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
@@ -227,7 +230,7 @@ export default function BiorepoHomePageContent() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button variant="outlined" size="large" endIcon={<RightIcon />} href="https://biorepo.neonscience.org/portal/collections/misc/collprofiles.php">
+                <Button variant="outlined" size="large" endIcon={<RightIcon />} href={`${CLIENT_ROOT}/collections/misc/collprofiles.php`}>
                   Browse Sample Types
                 </Button>
               </CardActions>
@@ -243,7 +246,7 @@ export default function BiorepoHomePageContent() {
                 loading="lazy"
               />
               <CardContent>
-                <Typography component="h2">
+                <Typography component="h1">
                   Search for Samples
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
@@ -251,7 +254,7 @@ export default function BiorepoHomePageContent() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button variant="outlined" size="large" endIcon={<RightIcon />} href="https://biorepo.neonscience.org/portal/neon/search/index.php">
+                <Button variant="outlined" size="large" endIcon={<RightIcon />} href={`${CLIENT_ROOT}/neon/search/index.php`}>
                   Search Samples
                 </Button>
               </CardActions>
@@ -267,7 +270,7 @@ export default function BiorepoHomePageContent() {
                 loading="lazy"
               />
               <CardContent>
-                <Typography component="h2">
+                <Typography component="h1">
                   Request Samples
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
@@ -275,7 +278,7 @@ export default function BiorepoHomePageContent() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button variant="outlined" size="large" endIcon={<RightIcon />} href="https://biorepo.neonscience.org/portal/misc/samplerequest.php">
+                <Button variant="outlined" size="large" endIcon={<RightIcon />} href={`${CLIENT_ROOT}/misc/samplerequest.php`}>
                   Request Samples
                 </Button>
               </CardActions>
@@ -291,7 +294,7 @@ export default function BiorepoHomePageContent() {
                 loading="lazy"
               />
               <CardContent>
-                <Typography component="h2">
+                <Typography component="h1">
                   Guidelines & Policies
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
@@ -299,7 +302,7 @@ export default function BiorepoHomePageContent() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button variant="outlined" size="large" endIcon={<RightIcon />} href="https://biorepo.neonscience.org/portal/misc/samplepolicy.php">
+                <Button variant="outlined" size="large" endIcon={<RightIcon />} href={`${CLIENT_ROOT}/misc/samplepolicy.php`}>
                   Read Guidelines
                 </Button>
               </CardActions>
@@ -315,7 +318,7 @@ export default function BiorepoHomePageContent() {
                 loading="lazy"
               />
               <CardContent>
-                <Typography component="h2">
+                <Typography component="h1">
                   Contact Biorepository
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
@@ -339,7 +342,7 @@ export default function BiorepoHomePageContent() {
                 loading="lazy"
               />
               <CardContent>
-                <Typography component="h2">
+                <Typography component="h1">
                   Something Else
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
@@ -399,6 +402,12 @@ export default function BiorepoHomePageContent() {
             </Grid>
           </Grid>
         </div>
+      </div>
+      <div id="site-map" style={{ marginTop: '10em' }}>
+        <Typography variant="h4" component="h4" style={{ marginBottom: '1em' }}>
+          Explore Samples by Location
+        </Typography>
+        <SiteMap view="split" />
       </div>
     </>
   );
