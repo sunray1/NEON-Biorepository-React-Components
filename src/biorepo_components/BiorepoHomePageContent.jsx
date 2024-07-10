@@ -326,7 +326,7 @@ export default function BiorepoHomePageContent() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button variant="outlined" size="large" endIcon={<RightIcon />} href="#">
+                <Button variant="outlined" size="large" endIcon={<RightIcon />} href={`${CLIENT_ROOT}/projects/index.php`}>
                   Browse Checklists
                 </Button>
               </CardActions>
