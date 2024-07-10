@@ -34,7 +34,7 @@ export default function BiorepoPage() {
     },
     {
       name: 'Sample Portal',
-      hash: 'index.php',
+      hash: 'https://biokic4.rc.asu.edu/neon/portal/index.php',
     },
     {
       name: 'Themes',

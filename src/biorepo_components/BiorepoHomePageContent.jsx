@@ -223,15 +223,15 @@ export default function BiorepoHomePageContent() {
               />
               <CardContent>
                 <Typography component="h1">
-                  Sample Types
+                  Sample Handling
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                  Lorem ipsum.
+                  Sample processes, types & collections
                 </Typography>
               </CardContent>
               <CardActions>
                 <Button variant="outlined" size="large" endIcon={<RightIcon />} href={`${CLIENT_ROOT}/collections/misc/collprofiles.php`}>
-                  Browse Sample Types
+                  Explore Sample Processes
                 </Button>
               </CardActions>
             </Card>
@@ -271,15 +271,15 @@ export default function BiorepoHomePageContent() {
               />
               <CardContent>
                 <Typography component="h1">
-                  Request Samples
+                  Sample Services
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                  Lorem ipsum blahblahblah
+                  Request Samples and Request Storage
                 </Typography>
               </CardContent>
               <CardActions>
                 <Button variant="outlined" size="large" endIcon={<RightIcon />} href={`${CLIENT_ROOT}/misc/samplerequest.php`}>
-                  Request Samples
+                  Request Services
                 </Button>
               </CardActions>
             </Card>
@@ -319,7 +319,7 @@ export default function BiorepoHomePageContent() {
               />
               <CardContent>
                 <Typography component="h1">
-                  Contact Biorepository
+                  Species Checklists
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
                   Lorem ipsum blahblahblah
@@ -327,7 +327,7 @@ export default function BiorepoHomePageContent() {
               </CardContent>
               <CardActions>
                 <Button variant="outlined" size="large" endIcon={<RightIcon />} href="#">
-                  Contact Us
+                  Browse Checklists
                 </Button>
               </CardActions>
             </Card>
@@ -343,15 +343,15 @@ export default function BiorepoHomePageContent() {
               />
               <CardContent>
                 <Typography component="h1">
-                  Something Else
+                  Sample Analyses
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                  Lorem ipsum blahblahblah
+                  API and Sample Explorer
                 </Typography>
               </CardContent>
               <CardActions>
                 <Button variant="outlined" size="large" endIcon={<RightIcon />} href="#">
-                  Something Else
+                  Work with Samples
                 </Button>
               </CardActions>
             </Card>
