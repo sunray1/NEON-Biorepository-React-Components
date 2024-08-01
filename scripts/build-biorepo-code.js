@@ -5,9 +5,9 @@ const fs = require('fs-extra');
 const path = require('path');
 
 const sourceDir = '/mnt/c/xampp/htdocs/NEON-Biorepository-React-Components/build';
-const targetDir = '/mnt/c/xampp/htdocs/NEON-Biorepository/neon-react';
+const targetDir = '/mnt/c/xampp/htdocs/neon/neon-react';
 const indexFilePath = '/mnt/c/xampp/htdocs/NEON-Biorepository-React-Components/build/index.html';
-const targetHtmlFilePath = '/mnt/c/xampp/htdocs/NEON-Biorepository/includes/head.php';
+const targetHtmlFilePath = '/mnt/c/xampp/htdocs/neon/includes/head.php';
 
 // Function to delete all files and folders in the target directory except for biorepo_lib
 async function cleanTargetDir() {
@@ -55,19 +55,33 @@ async function modifyHtml() {
         const regex = /<meta charset="utf-8"\/>([\s\S]*?)<\/head>/;
         const match = indexHtml.match(regex);
         if (match) {
-            const extractedContent = match[1];
+            let extractedContent = match[1];
 
             // Replace content if needed (example: replace 'old-text' with 'new-text')
-            const modifiedContent = extractedContent.replace(/\.\/neon-react\//g, '<?php echo $CLIENT_ROOT; ?>/neon-react/');
+            let modifiedContent = extractedContent.replace(/\.\/neon-react\//g, '<?php echo $CLIENT_ROOT; ?>/neon-react/');
 
+            // Extract the main JS file name from the extracted content
+            const scriptRegex = /<script defer="defer" src="([^"]+)"><\/script>/;
+            const scriptMatch = modifiedContent.match(scriptRegex);            
+            const mainJsFile = scriptMatch[1];
+
+            // Remove the specific <script defer="defer" src="..."></script> line
+            modifiedContent = modifiedContent.replace(scriptRegex, '');
+            
             // Get the current date and time
             const currentDateTime = new Date().toLocaleString();
             const updateInfo = `<!--React last updated: ${currentDateTime}-->\n`;
             const finalContent = updateInfo + modifiedContent;
 
             // Insert modified content into the target HTML file
-            const targetHtml = await fs.readFile(targetHtmlFilePath, 'utf8');
-            const updatedHtml = targetHtml.replace(/<!--React last updated[\s\S]*?.css" rel="stylesheet">/, finalContent);
+            let targetHtml = await fs.readFile(targetHtmlFilePath, 'utf8');
+            let updatedHtml = targetHtml.replace(/<!--React last updated[\s\S]*?.css" rel="stylesheet">/, finalContent);
+            
+            // Replace the line that contains reactScript.src with the new main JS file
+            const reactScriptRegex = /reactScript\.src = '[^']+\/main\.[^']+\.js';/;
+            const newReactScript = `reactScript.src = '${mainJsFile}';`;
+            updatedHtml = updatedHtml.replace(reactScriptRegex, newReactScript);
+            
             await fs.writeFile(targetHtmlFilePath, updatedHtml);
 
             console.log('HTML content modified and inserted successfully.');
