@@ -11,7 +11,8 @@ export default function BiorepoPage() {
   useEffect(() => {
     const fetchBreadcrumbs = async () => {
       try {
-        const response = await fetch('/neon/portal/neon-react/biorepo_lib/breadcrumbs.json');
+        // const response = await fetch('/neon/portal/neon-react/biorepo_lib/breadcrumbs.json');
+        const response = await fetch('/neon/neon-react/biorepo_lib/breadcrumbs.json');
         if (!response.ok) {
           throw new Error('Failed to fetch breadcrumbs');
         }
@@ -19,6 +20,11 @@ export default function BiorepoPage() {
         const { pathname } = window.location;
         const breadcrumbData = data[pathname] || [{ name: 'Home', href: '/' }];
         setBreadcrumbs(breadcrumbData);
+
+        const breadcrumbNav = document.querySelector('nav[data-selenium="neon-page.breadcrumbs"]');
+        const innerTextDiv = document.getElementById('innertext');
+        const parentDiv = innerTextDiv.parentNode;
+        parentDiv.insertBefore(breadcrumbNav, innerTextDiv);
       } catch (error) {
         console.error('Error fetching breadcrumbs:', error);
       }
