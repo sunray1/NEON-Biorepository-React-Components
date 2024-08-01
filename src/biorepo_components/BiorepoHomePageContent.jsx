@@ -230,7 +230,7 @@ export default function BiorepoHomePageContent() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button variant="outlined" size="large" endIcon={<RightIcon />} href={`${CLIENT_ROOT}/collections/misc/collprofiles.php`}>
+                <Button variant="outlined" size="large" endIcon={<RightIcon />} href={`${CLIENT_ROOT}/misc/samplehandling.php`}>
                   Explore Sample Processes
                 </Button>
               </CardActions>
@@ -278,7 +278,7 @@ export default function BiorepoHomePageContent() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button variant="outlined" size="large" endIcon={<RightIcon />} href={`${CLIENT_ROOT}/misc/samplerequest.php`}>
+                <Button variant="outlined" size="large" endIcon={<RightIcon />} href={`${CLIENT_ROOT}/misc/sampleservices.php`}>
                   Request Services
                 </Button>
               </CardActions>
@@ -302,7 +302,7 @@ export default function BiorepoHomePageContent() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button variant="outlined" size="large" endIcon={<RightIcon />} href={`${CLIENT_ROOT}/misc/samplepolicy.php`}>
+                <Button variant="outlined" size="large" endIcon={<RightIcon />} href={`${CLIENT_ROOT}/misc/sampleguidelines.php`}>
                   Read Guidelines
                 </Button>
               </CardActions>
@@ -343,14 +343,14 @@ export default function BiorepoHomePageContent() {
               />
               <CardContent>
                 <Typography component="h1">
-                  Sample Analyses
+                  Sample Analysis
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
                   API and Sample Explorer
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button variant="outlined" size="large" endIcon={<RightIcon />} href="#">
+                <Button variant="outlined" size="large" endIcon={<RightIcon />} href={`${CLIENT_ROOT}/misc/sampleanalysis.php`}>
                   Work with Samples
                 </Button>
               </CardActions>
