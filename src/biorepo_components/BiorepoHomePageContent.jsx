@@ -190,24 +190,25 @@ export default function BiorepoHomePageContent() {
           </div>
         </div>
       </div>
+      <div>
+        <p>
+          Each year, NEON collects and archives over 100,000 biological, genomic, and geological samples and specimens per year from terrestrial and aquatic sites. These samples and specimens complement the field observations and automated measurements collected at field sites. They represent a rich resource unique among natural history collections due to NEON’s scope for continental- and decadal-scale ecology. NEON’s archived samples are available upon request to support research studies and analyses. Samples are archived in a variety of collections around the country though the majority of samples are curated at the NEON Biorepository, managed by the Biodiversity Knowledge Integration Center (BioKIC) and Arizona State University’s Natural History Collections in Tempe, Arizona.
+        </p>
+      </div>
       <div className={classes.alert}>
         <p>
           A new
           {' '}
           <a href="https://www.nsf.gov/pubs/2024/nsf24069/nsf24069.jsp">
-            NSF DCL
-            {' '}
-            presents an opportunity to leverage the NEON Biorepository collections
+            NSF DCL presents an opportunity to leverage the NEON Biorepository collections
           </a>
           . Please
-          {' '}
           <a href="mailto:biorepo@asu.edu">
+            {' '}
             contact us
+            {' '}
           </a>
-          {' '}
-          with any questions or for information needed for
-          {' '}
-          potential innovative use! We are here to support you.
+          with any questions or for information needed for potential innovative use! We are here to support you.
         </p>
       </div>
       <div id="callout-cards" style={{ marginTop: '3em' }}>
@@ -217,7 +218,7 @@ export default function BiorepoHomePageContent() {
               <CardMedia
                 component="img"
                 image="images/home-card-images/20210913NEONBioRepository_057.jpg"
-                title="Sample Types"
+                title="Sample Handling"
                 height="auto"
                 loading="lazy"
               />
@@ -226,12 +227,12 @@ export default function BiorepoHomePageContent() {
                   Sample Handling
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                  Sample processes, types & collections
+                  Learn how samples are processed, handled and organized after collection, along with sample types and storage locations.
                 </Typography>
               </CardContent>
               <CardActions>
                 <Button variant="outlined" size="large" endIcon={<RightIcon />} href={`${CLIENT_ROOT}/misc/samplehandling.php`}>
-                  Explore Sample Processes
+                  Sample Procedures
                 </Button>
               </CardActions>
             </Card>
@@ -250,7 +251,7 @@ export default function BiorepoHomePageContent() {
                   Search for Samples
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                  Lorem ipsum blahblahblah
+                  All of NEON&apos;s samples can be requested for loan. Explore all of our available specimens and samples.
                 </Typography>
               </CardContent>
               <CardActions>
@@ -274,7 +275,7 @@ export default function BiorepoHomePageContent() {
                   Sample Services
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                  Request Samples and Request Storage
+                  Interested in requesting samples or storing your samples with the Biorepository? Request forms are available here.
                 </Typography>
               </CardContent>
               <CardActions>
@@ -298,7 +299,7 @@ export default function BiorepoHomePageContent() {
                   Guidelines & Policies
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                  Lorem ipsum blahblahblah
+                  Explore our sample usage policies and recommendations for acknowledging and citing NEON sample use, along with guidance on publishing your own datasets.
                 </Typography>
               </CardContent>
               <CardActions>
@@ -313,7 +314,7 @@ export default function BiorepoHomePageContent() {
               <CardMedia
                 component="img"
                 image="images/home-card-images/IMG_9534.jpg"
-                title="Contact Biorepository"
+                title="Species Checklists"
                 height="auto"
                 loading="lazy"
               />
@@ -322,7 +323,7 @@ export default function BiorepoHomePageContent() {
                   Species Checklists
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                  Lorem ipsum blahblahblah
+                  Vouchered species lists from all NEON sites and domains, along with taxonomic checklists with keys used for species identification.
                 </Typography>
               </CardContent>
               <CardActions>
@@ -337,7 +338,7 @@ export default function BiorepoHomePageContent() {
               <CardMedia
                 component="img"
                 image="images/home-card-images/20210913NEONBioRepository_244.jpg"
-                title="Something Else"
+                title="Sample Analysis"
                 height="auto"
                 loading="lazy"
               />
@@ -346,7 +347,7 @@ export default function BiorepoHomePageContent() {
                   Sample Analysis
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                  API and Sample Explorer
+                  Discover tools for analyzing samples, such as the Biorepository API and the Sample Explorer, to investigate sample connections and custody history.
                 </Typography>
               </CardContent>
               <CardActions>
