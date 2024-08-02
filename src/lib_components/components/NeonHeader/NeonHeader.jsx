@@ -430,14 +430,6 @@ const NeonHeader = forwardRef((props, headerRef) => {
       if (attribs.id !== AUTH_ELEMENT_ID) { return null; }
       return (
         <div id={AUTH_ELEMENT_ID} className={classes.coreAuthContainer}>
-          <NeonAuth
-            loginPath={NeonEnvironment.getFullAuthPath('login')}
-            logoutPath={NeonEnvironment.getFullAuthPath('logout')}
-            accountPath={NeonEnvironment.route.buildAccountRoute()}
-            loginType={NeonAuthType.REDIRECT}
-            logoutType={NeonAuthType.SILENT}
-            displayType={NeonAuthDisplayType.MENU}
-          />
         </div>
       );
     },
