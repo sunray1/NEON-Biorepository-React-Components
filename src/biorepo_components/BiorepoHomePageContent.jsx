@@ -38,8 +38,8 @@ const useStyles = makeStyles((theme) => ({
     bottom: 0,
     left: 0,
     zIndex: 1,
-    width: '50%',
-    height: '63%',
+    width: '70%',
+    height: '73%',
     color: '#fff',
   },
   lightBrownDiv: {
@@ -124,6 +124,7 @@ const useStyles = makeStyles((theme) => ({
     borderStyle: 'solid',
     borderTopWidth: '2px',
     padding: '10px',
+    fontSize: '1.125rem',
   },
 }));
 
@@ -145,10 +146,10 @@ export default function BiorepoHomePageContent() {
         <div id="hero-content" className={classes.heroContent}>
           <div id="content-title" className={classes.lightBrownDiv}>
             <Typography variant="h3" color="white" component="h3">
-              NEON Biorepository Sample Portal at ASU
+              NEON Biorepository Sample Portal at Arizona State University
             </Typography>
             <Typography variant="h6" color="white" component="h6">
-              Something here about what the site serves
+              Find data on archived physical samples and information on how to request a loan from the  Biorepository, our primary sample and specimen collection.
             </Typography>
           </div>
           <div id="content-sub" className={classes.darkBrownDiv}>
@@ -191,7 +192,10 @@ export default function BiorepoHomePageContent() {
         </div>
       </div>
       <div>
-        <p>
+        <p style={{
+          fontSize: '1.125rem',
+        }}
+        >
           Each year, NEON collects and archives over 100,000 biological, genomic, and geological samples and specimens per year from terrestrial and aquatic sites. These samples and specimens complement the field observations and automated measurements collected at field sites. They represent a rich resource unique among natural history collections due to NEON’s scope for continental- and decadal-scale ecology. NEON’s archived samples are available upon request to support research studies and analyses. Samples are archived in a variety of collections around the country though the majority of samples are curated at the NEON Biorepository, managed by the Biodiversity Knowledge Integration Center (BioKIC) and Arizona State University’s Natural History Collections in Tempe, Arizona.
         </p>
       </div>
