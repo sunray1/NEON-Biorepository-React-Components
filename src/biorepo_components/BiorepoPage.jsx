@@ -11,8 +11,8 @@ export default function BiorepoPage() {
   useEffect(() => {
     const fetchBreadcrumbs = async () => {
       try {
-        // const response = await fetch('/neon/portal/neon-react/biorepo_lib/breadcrumbs.json');
-        const response = await fetch('/neon/neon-react/biorepo_lib/breadcrumbs.json');
+        const response = await fetch('/neon/portal/neon-react/biorepo_lib/breadcrumbs.json');
+        // const response = await fetch('/neon/neon-react/biorepo_lib/breadcrumbs.json');
         if (!response.ok) {
           throw new Error('Failed to fetch breadcrumbs');
         }
