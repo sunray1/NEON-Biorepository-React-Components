@@ -19,6 +19,7 @@ import Theme from '../lib_components/components/Theme/Theme';
 import SiteMap from '../lib_components/components/SiteMap/SiteMap';
 
 const CLIENT_ROOT = 'https://biokic4.rc.asu.edu/neon/portal';
+//const CLIENT_ROOT = 'http://localhost/neon';
 
 const useStyles = makeStyles((theme) => ({
   heroTitle: {
@@ -192,10 +193,7 @@ export default function BiorepoHomePageContent() {
         </div>
       </div>
       <div>
-        <p style={{
-          fontSize: '1.125rem',
-        }}
-        >
+        <p>
           Each year, NEON collects and archives over 100,000 biological, genomic, and geological samples and specimens per year from terrestrial and aquatic sites. These samples and specimens complement the field observations and automated measurements collected at field sites. They represent a rich resource unique among natural history collections due to NEON’s scope for continental- and decadal-scale ecology. NEON’s archived samples are available upon request to support research studies and analyses. Samples are archived in a variety of collections around the country though the majority of samples are curated at the NEON Biorepository, managed by the Biodiversity Knowledge Integration Center (BioKIC) and Arizona State University’s Natural History Collections in Tempe, Arizona.
         </p>
       </div>
@@ -222,21 +220,21 @@ export default function BiorepoHomePageContent() {
               <CardMedia
                 component="img"
                 image="images/home-card-images/20210913NEONBioRepository_057.jpg"
-                title="Sample Handling"
+                title="About Samples"
                 height="auto"
                 loading="lazy"
               />
               <CardContent>
                 <Typography component="h1">
-                  Sample Handling
+                  About Samples
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                  Learn how samples are processed, handled and organized after collection, along with sample types and storage locations.
+                  Learn about the types of samples NEON collects, and how they are processed, organized and labeled.
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button variant="outlined" size="large" endIcon={<RightIcon />} href={`${CLIENT_ROOT}/misc/samplehandling.php`}>
-                  Sample Procedures
+                <Button variant="outlined" size="large" endIcon={<RightIcon />} href={`${CLIENT_ROOT}/misc/aboutsamples.php`}>
+                  Learn About Samples
                 </Button>
               </CardActions>
             </Card>
