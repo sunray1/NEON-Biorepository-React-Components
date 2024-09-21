@@ -9,7 +9,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import RightIcon from '@material-ui/icons/ChevronRight';
 
-//const CLIENT_ROOT = 'http://localhost/neon';
+// const CLIENT_ROOT = 'http://localhost/neon';
 const CLIENT_ROOT = 'https://biokic4.rc.asu.edu/neon/portal';
 
 export default function BiorepoGuidelinesContent() {

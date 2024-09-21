@@ -11,7 +11,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import RightIcon from '@material-ui/icons/ChevronRight';
 
 const CLIENT_ROOT = 'https://biokic4.rc.asu.edu/neon/portal';
-//const CLIENT_ROOT = 'http://localhost/neon';
+// const CLIENT_ROOT = 'http://localhost/neon';
 
 export default function BiorepoAboutSamplesContent() {
   return (
@@ -21,7 +21,7 @@ export default function BiorepoAboutSamplesContent() {
           <Card variant="outlined">
             <CardMedia
               component="img"
-              image="../images/card-images/IMG_9530.HEIC"
+              image="../images/card-images/IMG_9530.jpg"
               title="Repositories"
               height="auto"
               loading="lazy"
@@ -45,7 +45,7 @@ export default function BiorepoAboutSamplesContent() {
           <Card variant="outlined">
             <CardMedia
               component="img"
-              image="../images/card-images/IMG_9506.HEIC"
+              image="../images/card-images/IMG_9506.jpg"
               title="Collections"
               height="auto"
               loading="lazy"
