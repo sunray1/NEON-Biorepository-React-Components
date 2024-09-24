@@ -21,6 +21,7 @@ import BiorepoPage from './biorepo_components/BiorepoPage';
 import BiorepoHomePageContent from './biorepo_components/BiorepoHomePageContent';
 import BiorepoGuidelinesContent from './biorepo_components/BiorepoGuidelinesContent';
 import BiorepoAboutSamplesContent from './biorepo_components/BiorepoAboutSamplesContent';
+import BiorepoCollectionsContent from './biorepo_components/BiorepoCollectionsContent';
 
 ReactDOM.render(<BiorepoPage />, document.getElementById('biorepo-page'));
 
@@ -37,4 +38,9 @@ if (biorepoGuidelinesContentElement) {
 const biorepoAboutSamplesElement = document.getElementById('biorepo-aboutsamples-content');
 if (biorepoAboutSamplesElement) {
   ReactDOM.render(<BiorepoAboutSamplesContent />, biorepoAboutSamplesElement);
+}
+
+const biorepoCollectionsElement = document.getElementById('biorepo-collections-content');
+if (biorepoCollectionsElement) {
+  ReactDOM.render(<BiorepoCollectionsContent />, biorepoCollectionsElement);
 }
