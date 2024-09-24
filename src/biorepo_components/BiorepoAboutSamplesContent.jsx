@@ -52,14 +52,14 @@ export default function BiorepoAboutSamplesContent() {
             />
             <CardContent>
               <Typography variant="h5">
-                Sample Collection Profiles
+                Browse Sample Collections
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p" style={{ fontSize: '1rem' }}>
                 NEON samples in the sample portal are organized into collections. These generally correspond to the types of samples collected. Data and statistics about these collections can be found here.
               </Typography>
             </CardContent>
             <CardActions>
-              <Button variant="outlined" size="large" endIcon={<RightIcon />} href={`${CLIENT_ROOT}/collections/misc/collprofiles.php`}>
+              <Button variant="outlined" size="large" endIcon={<RightIcon />} href={`${CLIENT_ROOT}/collections/misc/browsecollprofiles.php`}>
                 Explore Samples Types
               </Button>
             </CardActions>
