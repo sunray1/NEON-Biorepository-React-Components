@@ -135,7 +135,7 @@ export default function BiorepoCollectionsContent() {
     <div>
       <Box sx={{ width: '100%' }}>
         <Typography variant="h2">
-          Sample Collection Profiles
+          Browse Collection Profiles
         </Typography>
         <Typography variant="body1">
           NEON samples are organized into collections, which generally correspond to the types of samples collected based on NEON protocols and sample classes. It is strongly recommended to read the corresponding protocol to understand how and why the collections are organized as they are. Collections are displayed in various groupings via the tabs below. Click on any collection to view detailed data, records, and statistics.
