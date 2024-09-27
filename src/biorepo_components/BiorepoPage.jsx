@@ -3,16 +3,30 @@ import React, {
   useEffect,
 } from 'react';
 
+import Typography from '@material-ui/core/Typography';
+
 import NeonPage from '../lib_components/components/NeonPage/NeonPage';
 
 export default function BiorepoPage() {
-  // Get breadcrumbs from json based on pathname
+  // Get breadcrumbs and sidebar from json based on pathname
   const [breadcrumbs, setBreadcrumbs] = useState([]);
+  const [sidebarLinks, setSidebarLinks] = useState([
+    {
+      name: 'Data Portal',
+      hash: 'https://www.neonscience.org/data',
+    },
+    {
+      name: 'Sample Portal',
+      hash: 'https://biokic4.rc.asu.edu/neon/portal/index.php',
+    },
+  ]);
+  const [sidebarTitle, setSidebarTitle] = useState('');
+
   useEffect(() => {
     const fetchBreadcrumbs = async () => {
       try {
-        const response = await fetch('/neon/portal/neon-react/biorepo_lib/breadcrumbs.json');
-        // const response = await fetch('/neon/neon-react/biorepo_lib/breadcrumbs.json');
+        // const response = await fetch('/neon/portal/neon-react/biorepo_lib/breadcrumbs.json');
+        const response = await fetch('/neon/neon-react/biorepo_lib/breadcrumbs.json');
         if (!response.ok) {
           throw new Error('Failed to fetch breadcrumbs');
         }
@@ -30,47 +44,36 @@ export default function BiorepoPage() {
       }
     };
 
+    const fetchSidebarLinks = async () => {
+      try {
+        const response = await fetch('/neon/neon-react/biorepo_lib/sidebar.json');
+        if (!response.ok) {
+          throw new Error('Failed to fetch sidebar links');
+        }
+        const data = await response.json();
+        const { pathname } = window.location;
+
+        const sidebarData = data[pathname] || data.default;
+        setSidebarLinks(sidebarData.links);
+        setSidebarTitle(sidebarData.sidebarTitle);
+      } catch (error) {
+        console.error('Error fetching sidebar links:', error);
+      }
+    };
+
     fetchBreadcrumbs();
+    fetchSidebarLinks();
   }, []);
 
-  const sidebarLinks = [
-    {
-      name: 'Data Portal',
-      hash: 'https://www.neonscience.org/data',
-    },
-    {
-      name: 'Sample Portal',
-      hash: 'https://biokic4.rc.asu.edu/neon/portal/index.php',
-    },
-    {
-      name: 'Themes',
-      hash: 'https://www.neonscience.org/data-samples/data-themes',
-    },
-    {
-      name: 'Collection Methods',
-      hash: 'https://www.neonscience.org/data-collection',
-    },
-    {
-      name: 'Notifications',
-      hash: 'https://www.neonscience.org/data-samples/data-notifications',
-    },
-    {
-      name: 'Spatial Data & Maps',
-      hash: 'https://www.neonscience.org/data-samples/data/spatial-data-maps',
-    },
-    {
-      name: 'Document Library',
-      hash: 'https://data.neonscience.org/documents',
-    },
-  ];
+  console.log(breadcrumbs);
+  console.log(sidebarLinks);
 
   return (
     <NeonPage
       breadcrumbs={breadcrumbs}
       breadcrumbHomeHref="https://www.neonscience.org/"
       sidebarLinks={sidebarLinks}
-      sidebarTitle="Data & Samples"
-      useCoreAuth
+      sidebarTitle={sidebarTitle}
     >
     </NeonPage>
   );

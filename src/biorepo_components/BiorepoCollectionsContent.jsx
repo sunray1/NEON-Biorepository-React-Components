@@ -134,7 +134,7 @@ export default function BiorepoCollectionsContent() {
   return (
     <div>
       <Box sx={{ width: '100%' }}>
-        <Typography variant="h2">
+        <Typography variant="h3">
           Browse Collection Profiles
         </Typography>
         <Typography variant="body1">
