@@ -418,7 +418,7 @@ const NeonPage = (props) => {
   const sidebarHashMap = !hasSidebarLinks ? {} : Object.fromEntries(
     sidebarLinks.map((link, idx) => [link.hash || '#', idx]),
   );
-  const initialCurrentSidebarHash = sidebarLinks[1].hash;
+  const initialCurrentSidebarHash = sidebarLinks[0].hash;
   const [currentSidebarHash, setCurrentSidebarHash] = useState(initialCurrentSidebarHash);
   const [hashInitialized, setHashInitialized] = useState(false);
   const [sidebarExpanded, setSidebarExpanded] = useState(false); // for small viewports only

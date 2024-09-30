@@ -8,18 +8,26 @@ import Typography from '@material-ui/core/Typography';
 import NeonPage from '../lib_components/components/NeonPage/NeonPage';
 
 export default function BiorepoPage() {
+  const getDefaultSidebarLinks = () => {
+    if (window.location.pathname === '/neon/collections/datasets/publiclist.php') {
+      return [
+        {
+          name: 'Papers & Publications',
+          hash: 'https://www.neonscience.org/impact/papers-publications',
+        },
+      ];
+    }
+    return [
+      {
+        name: 'Sample Portal',
+        hash: 'https://biokic4.rc.asu.edu/neon/portal/index.php',
+      },
+    ];
+  };
+
   // Get breadcrumbs and sidebar from json based on pathname
   const [breadcrumbs, setBreadcrumbs] = useState([]);
-  const [sidebarLinks, setSidebarLinks] = useState([
-    {
-      name: 'Data Portal',
-      hash: 'https://www.neonscience.org/data',
-    },
-    {
-      name: 'Sample Portal',
-      hash: 'https://biokic4.rc.asu.edu/neon/portal/index.php',
-    },
-  ]);
+  const [sidebarLinks, setSidebarLinks] = useState(getDefaultSidebarLinks());
   const [sidebarTitle, setSidebarTitle] = useState('');
 
   useEffect(() => {
