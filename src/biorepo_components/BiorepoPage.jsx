@@ -9,7 +9,8 @@ import NeonPage from '../lib_components/components/NeonPage/NeonPage';
 
 export default function BiorepoPage() {
   const getDefaultSidebarLinks = () => {
-    if (window.location.pathname === '/neon/collections/datasets/publiclist.php') {
+    if (window.location.pathname === '/neon/portal/collections/datasets/publiclist.php') {
+    // if (window.location.pathname === '/neon/collections/datasets/publiclist.php') {
       return [
         {
           name: 'Papers & Publications',
@@ -33,8 +34,8 @@ export default function BiorepoPage() {
   useEffect(() => {
     const fetchBreadcrumbs = async () => {
       try {
-        // const response = await fetch('/neon/portal/neon-react/biorepo_lib/breadcrumbs.json');
-        const response = await fetch('/neon/neon-react/biorepo_lib/breadcrumbs.json');
+        const response = await fetch('/neon/portal/neon-react/biorepo_lib/breadcrumbs.json');
+        // const response = await fetch('/neon/neon-react/biorepo_lib/breadcrumbs.json');
         if (!response.ok) {
           throw new Error('Failed to fetch breadcrumbs');
         }
@@ -54,7 +55,8 @@ export default function BiorepoPage() {
 
     const fetchSidebarLinks = async () => {
       try {
-        const response = await fetch('/neon/neon-react/biorepo_lib/sidebar.json');
+        const response = await fetch('/neon/portal/neon-react/biorepo_lib/sidebar.json');
+        // const response = await fetch('/neon/neon-react/biorepo_lib/sidebar.json');
         if (!response.ok) {
           throw new Error('Failed to fetch sidebar links');
         }
