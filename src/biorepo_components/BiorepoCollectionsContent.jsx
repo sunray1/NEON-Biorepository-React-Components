@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import PropTypes from 'prop-types';
 import Box from '@material-ui/core/Box';
@@ -10,6 +10,7 @@ import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandIcon from '@material-ui/icons/ExpandMore';
+import Link from '@material-ui/core/Link';
 
 const CLIENT_ROOT = 'https://biokic4.rc.asu.edu/neon/portal';
 // const CLIENT_ROOT = 'http://localhost/neon';
@@ -49,60 +50,12 @@ function a11yProps(index) {
   };
 }
 
-const nodesData = {
-  id: 1,
-  name: 'de Volksbank',
-  children: [
-    {
-      id: 2,
-      name: 'dVb',
-      children: [
-        {
-          id: 4,
-          name: 'Level',
-          children: [
-            { id: 6, name: 'Level 13.3' },
-            { id: 7, name: 'Level 14.1' },
-          ],
-        },
-        {
-          id: 5,
-          name: 'VIS',
-          children: [
-            { id: 8, name: 'Audascan' },
-            { id: 9, name: 'RDW' },
-          ],
-        },
-      ],
-    },
-    {
-      id: 3,
-      name: 'ASN',
-      children: [
-        {
-          id: 10,
-          name: 'Level',
-          children: [
-            { id: 11, name: 'Level 13.3' },
-            { id: 12, name: 'Level 14.1' },
-          ],
-        },
-        {
-          id: 13,
-          name: 'VIS',
-          children: [
-            { id: 14, name: 'Audascan' },
-            { id: 15, name: 'RDW' },
-          ],
-        },
-      ],
-    },
-  ],
-};
-
 function renderNode(nodes: any[], depth = 0) {
   return nodes.map((node, index) => {
     const isLastChild = index === nodes.length - 1;
+    const collidLink = node.collid
+      ? `https://biokic4.rc.asu.edu/neon/portal/collections/misc/collprofiles.php?collid=${node.collid}`
+      : null;
     return (
       <div
         key={node.id}
@@ -115,7 +68,13 @@ function renderNode(nodes: any[], depth = 0) {
           <AccordionSummary
             expandIcon={node.children ? <ExpandIcon /> : null}
           >
-            <Typography>{node.name}</Typography>
+            {collidLink ? (
+              <Link href={collidLink} target="_blank" rel="noopener noreferrer" color="primary" underline="always">
+                <Typography color="inherit">{node.name}</Typography>
+              </Link>
+            ) : (
+              <Typography>{node.name}</Typography>
+            )}
           </AccordionSummary>
           {node.children && renderNode(node.children, depth + 1)}
         </Accordion>
@@ -126,10 +85,40 @@ function renderNode(nodes: any[], depth = 0) {
 
 export default function BiorepoCollectionsContent() {
   const [value, setValue] = React.useState(0);
+  const [taxonomicNodesData, setTaxonomicNodes] = useState([]);
+  const [sampletypeNodesData, setSampletypeNodes] = useState([]);
+  const [protocolNodesData, setProtocolNodes] = useState([]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  useEffect(() => {
+    fetch('/neon/neon-react/biorepo_lib/collections-taxonomic.json')
+      .then((response) => response.json())
+      .then((data) => {
+        setTaxonomicNodes(data);
+      })
+      .catch((error) => console.error('Error loading nodes data:', error));
+  }, []);
+
+  useEffect(() => {
+    fetch('/neon/neon-react/biorepo_lib/collections-sampletype.json')
+      .then((response) => response.json())
+      .then((data) => {
+        setSampletypeNodes(data);
+      })
+      .catch((error) => console.error('Error loading nodes data:', error));
+  }, []);
+
+  useEffect(() => {
+    fetch('/neon/neon-react/biorepo_lib/collections-protocol.json')
+      .then((response) => response.json())
+      .then((data) => {
+        setProtocolNodes(data);
+      })
+      .catch((error) => console.error('Error loading nodes data:', error));
+  }, []);
 
   return (
     <div>
@@ -158,17 +147,17 @@ export default function BiorepoCollectionsContent() {
         </Box>
         <CustomTabPanel value={value} index={0}>
           <div>
-            {renderNode([nodesData])}
+            {renderNode(taxonomicNodesData)}
           </div>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={1}>
           <div>
-            {renderNode([nodesData])}
+            {renderNode(sampletypeNodesData)}
           </div>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={2}>
           <div>
-            {renderNode([nodesData])}
+            {renderNode(protocolNodesData)}
           </div>
         </CustomTabPanel>
       </Box>

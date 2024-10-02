@@ -73,9 +73,6 @@ export default function BiorepoPage() {
     fetchSidebarLinks();
   }, []);
 
-  console.log(breadcrumbs);
-  console.log(sidebarLinks);
-
   return (
     <NeonPage
       breadcrumbs={breadcrumbs}
