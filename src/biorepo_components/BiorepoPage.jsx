@@ -3,8 +3,6 @@ import React, {
   useEffect,
 } from 'react';
 
-import Typography from '@material-ui/core/Typography';
-
 import NeonPage from '../lib_components/components/NeonPage/NeonPage';
 
 export default function BiorepoPage() {

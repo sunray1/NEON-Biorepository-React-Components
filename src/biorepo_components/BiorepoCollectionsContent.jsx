@@ -12,9 +12,6 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandIcon from '@material-ui/icons/ExpandMore';
 import Link from '@material-ui/core/Link';
 
-const CLIENT_ROOT = 'https://biokic4.rc.asu.edu/neon/portal';
-// const CLIENT_ROOT = 'http://localhost/neon';
-
 function CustomTabPanel(props) {
   const {
     children, value, index, ...other
@@ -56,6 +53,15 @@ function renderNode(nodes: any[], depth = 0) {
     const collidLink = node.collid
       ? `https://biokic4.rc.asu.edu/neon/portal/collections/misc/collprofiles.php?collid=${node.collid}`
       : null;
+
+    const nodeContent = collidLink ? (
+      <Link href={collidLink} target="_blank" rel="noopener noreferrer" color="primary" underline="always">
+        <Typography color="inherit">{node.name}</Typography>
+      </Link>
+    ) : (
+      <Typography>{node.name}</Typography>
+    );
+
     return (
       <div
         key={node.id}
@@ -65,17 +71,15 @@ function renderNode(nodes: any[], depth = 0) {
         }}
       >
         <Accordion>
-          <AccordionSummary
-            expandIcon={node.children ? <ExpandIcon /> : null}
-          >
-            {collidLink ? (
-              <Link href={collidLink} target="_blank" rel="noopener noreferrer" color="primary" underline="always">
-                <Typography color="inherit">{node.name}</Typography>
-              </Link>
-            ) : (
-              <Typography>{node.name}</Typography>
-            )}
-          </AccordionSummary>
+          {node.children ? (
+            <AccordionSummary expandIcon={<ExpandIcon />}>
+              {nodeContent}
+            </AccordionSummary>
+          ) : (
+            <AccordionDetails>
+              {nodeContent}
+            </AccordionDetails>
+          )}
           {node.children && renderNode(node.children, depth + 1)}
         </Accordion>
       </div>
@@ -129,9 +133,11 @@ export default function BiorepoCollectionsContent() {
         <Typography variant="h3">
           Browse Collection Profiles
         </Typography>
-        <Typography variant="body1">
-          NEON samples are organized into collections, which generally correspond to the types of samples collected based on NEON protocols and sample classes. It is strongly recommended to read the corresponding protocol to understand how and why the collections are organized as they are. Collections are displayed in various groupings via the tabs below. Click on any collection to view detailed data, records, and statistics.
-        </Typography>
+        <Box sx={{ paddingTop: '30px', paddingBottom: '30px' }}>
+          <Typography variant="body1">
+            NEON samples are organized into collections, which generally correspond to the types of samples collected based on NEON protocols and sample classes. It is strongly recommended to read the corresponding protocol to understand how and why the collections are organized as they are. Collections are displayed in various groupings via the tabs below. Click on any collection to view detailed data, records, and statistics.
+          </Typography>
+        </Box>
       </Box>
       <Box sx={{ width: '100%' }}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
