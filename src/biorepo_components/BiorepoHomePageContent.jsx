@@ -19,7 +19,7 @@ import Theme from '../lib_components/components/Theme/Theme';
 import SiteMap from '../lib_components/components/SiteMap/SiteMap';
 
 const CLIENT_ROOT = 'https://biokic4.rc.asu.edu/neon/portal';
-//const CLIENT_ROOT = 'http://localhost/neon';
+// const CLIENT_ROOT = 'http://localhost/neon';
 
 const useStyles = makeStyles((theme) => ({
   heroTitle: {
@@ -146,10 +146,10 @@ export default function BiorepoHomePageContent() {
         </div>
         <div id="hero-content" className={classes.heroContent}>
           <div id="content-title" className={classes.lightBrownDiv}>
-            <Typography variant="h3" color="white" component="h3">
+            <Typography variant="h3" color="white" component="h3" style={{ fontSize: '2.5cqw' }}>
               NEON Biorepository Sample Portal at Arizona State University
             </Typography>
-            <Typography variant="h6" color="white" component="h6">
+            <Typography variant="h6" color="white" component="h6" style={{ fontSize: '1.1cqw' }}>
               Find data on archived physical samples and information on how to request a loan from the  Biorepository, our primary sample and specimen collection.
             </Typography>
           </div>
@@ -205,7 +205,7 @@ export default function BiorepoHomePageContent() {
             NSF DCL presents an opportunity to leverage the NEON Biorepository collections
           </a>
           . Please
-          <a href="mailto:biorepo@asu.edu">
+          <a href="https://www.neonscience.org/about/contact-neon-biorepository">
             {' '}
             contact us
             {' '}
