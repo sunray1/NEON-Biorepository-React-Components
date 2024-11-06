@@ -24,7 +24,7 @@ function renderNode(nodes: any[], depth = 0) {
       : null;
 
     const nodeContent = collidLink ? (
-      <Link href={collidLink} target="_blank" rel="noopener noreferrer" color="primary" underline="always">
+      <Link href={collidLink} color="primary" underline="always">
         <Typography color="inherit">{node.name}</Typography>
       </Link>
     ) : (
@@ -39,7 +39,7 @@ function renderNode(nodes: any[], depth = 0) {
           marginBottom: isLastChild ? 20 : 0,
         }}
       >
-        <Accordion>
+        <Accordion disabled={node.collid === 0}>
           {node.children ? (
             <AccordionSummary expandIcon={<ExpandIcon />}>
               {nodeContent}
@@ -62,8 +62,8 @@ export default function BiorepoChecklistsContent() {
   const [plantNodesData, setPlantNodes] = useState([]);
 
   useEffect(() => {
-    // fetch('/neon/portal/neon-react/biorepo_lib/checklists-invertebrates.json')
-    fetch('/neon/neon-react/biorepo_lib/checklists-invertebrates.json')
+    fetch('/neon/portal/neon-react/biorepo_lib/checklists-invertebrates.json')
+    // fetch('/neon/neon-react/biorepo_lib/checklists-invertebrates.json')
       .then((response) => response.json())
       .then((data) => {
         setInvertebrateNodes(data);
@@ -72,8 +72,8 @@ export default function BiorepoChecklistsContent() {
   }, []);
 
   useEffect(() => {
-    // fetch('/neon/portal/neon-react/biorepo_lib/checklists-vertebrates.json')
-    fetch('/neon/neon-react/biorepo_lib/checklists-vertebrates.json')
+    fetch('/neon/portal/neon-react/biorepo_lib/checklists-vertebrates.json')
+    // fetch('/neon/neon-react/biorepo_lib/checklists-vertebrates.json')
       .then((response) => response.json())
       .then((data) => {
         setVertebrateNodes(data);
@@ -82,8 +82,8 @@ export default function BiorepoChecklistsContent() {
   }, []);
 
   useEffect(() => {
-    // fetch('/neon/portal/neon-react/biorepo_lib/checklists-plants.json')
-    fetch('/neon/neon-react/biorepo_lib/checklists-plants.json')
+    fetch('/neon/portal/neon-react/biorepo_lib/checklists-plants.json')
+    // fetch('/neon/neon-react/biorepo_lib/checklists-plants.json')
       .then((response) => response.json())
       .then((data) => {
         setPlantNodes(data);
@@ -104,7 +104,7 @@ export default function BiorepoChecklistsContent() {
               loading="lazy"
             />
             <CardContent>
-              <Typography variant="h5" style={{ marginBottom:20 }}>
+              <Typography variant="h5" style={{ marginBottom: 20 }}>
                 Invertebrates
               </Typography>
               <div>
@@ -123,8 +123,8 @@ export default function BiorepoChecklistsContent() {
               loading="lazy"
             />
             <CardContent>
-              <Typography variant="h5" style={{ marginBottom:20 }}>
-                Terrestrial Plants
+              <Typography variant="h5" style={{ marginBottom: 20 }}>
+                Plants
               </Typography>
               <div>
                 {renderNode(plantNodesData)}
@@ -142,7 +142,7 @@ export default function BiorepoChecklistsContent() {
               loading="lazy"
             />
             <CardContent>
-              <Typography variant="h5" style={{ marginBottom:20 }}>
+              <Typography variant="h5" style={{ marginBottom: 20 }}>
                 Vertebrates
               </Typography>
               <div>
