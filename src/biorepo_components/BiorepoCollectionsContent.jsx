@@ -51,7 +51,7 @@ function renderNode(nodes: any[], depth = 0) {
   return nodes.map((node, index) => {
     const isLastChild = index === nodes.length - 1;
     const collidLink = node.collid
-      ? `https://biokic4.rc.asu.edu/neon/portal/collections/misc/collprofiles.php?collid=${node.collid}`
+      ? `https://biokic4.rc.asu.edu/neon/portal/collections/misc/neoncollprofiles.php?collid=${node.collid}`
       : null;
 
     const nodeContent = collidLink ? (
