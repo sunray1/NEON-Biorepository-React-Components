@@ -146,10 +146,10 @@ export default function BiorepoHomePageContent() {
         </div>
         <div id="hero-content" className={classes.heroContent}>
           <div id="content-title" className={classes.lightBrownDiv}>
-            <Typography variant="h3" color="white" component="h3" style={{ fontSize: 'min(1.75cqw, 50px)' }}>
+            <Typography variant="h3" color="white" component="h3" style={{ fontSize: 'min(3rem, 2.75cqw)' }}>
               NEON Biorepository Sample Portal at Arizona State University
             </Typography>
-            <Typography variant="h6" color="white" component="h6" style={{ fontSize: 'min(1cqw, 20px)' }}>
+            <Typography variant="h6" color="white" component="h6" style={{ fontSize: 'min(1.5rem, 1.3cqw)' }}>
               Find data on archived physical samples and information on how to request a loan from the  Biorepository, our primary sample and specimen collection.
             </Typography>
           </div>
@@ -169,7 +169,7 @@ export default function BiorepoHomePageContent() {
                 letterSpacing: '0.2em',
                 textTransform: 'uppercase',
                 color: '#C2DEEA',
-                fontSize: '0.8125rem',
+                fontSize: 'min(0.8125rem, 0.8125cqw)',
                 marginTop: 0,
                 marginBottom: 0,
               }}
@@ -179,7 +179,7 @@ export default function BiorepoHomePageContent() {
               <p style={{
                 fontFamily: '"Inter",sans-serif',
                 lineHeight: '1.25',
-                fontSize: '1.5rem',
+                fontSize: 'min(1.5rem, 1.5cqw)',
                 marginTop: 0,
                 marginBottom: 0,
               }}
