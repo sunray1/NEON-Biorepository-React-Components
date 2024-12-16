@@ -98,7 +98,7 @@ export default function BiorepoChecklistsContent() {
           <Card variant="outlined">
             <CardMedia
               component="img"
-              image="../images/card-images/IMG_9530.jpg"
+              image="../images/card-images/IMG_9506.jpg"
               title="Repositories"
               height="auto"
               loading="lazy"
@@ -117,7 +117,7 @@ export default function BiorepoChecklistsContent() {
           <Card variant="outlined">
             <CardMedia
               component="img"
-              image="../images/card-images/IMG_9530.jpg"
+              image="../images/card-images/20210913NEONBioRepository_088.jpg"
               title="Repositories"
               height="auto"
               loading="lazy"
@@ -136,7 +136,7 @@ export default function BiorepoChecklistsContent() {
           <Card variant="outlined">
             <CardMedia
               component="img"
-              image="../images/card-images/IMG_9506.jpg"
+              image="../images/card-images/IMG_9530.jpg"
               title="Collections"
               height="auto"
               loading="lazy"
