@@ -21,7 +21,7 @@ export default function BiorepoAboutSamplesContent() {
           <Card variant="outlined">
             <CardMedia
               component="img"
-              image="../images/card-images/IMG_9530.jpg"
+              image="../images/card-images/1D8A2197.jpg"
               title="Repositories"
               height="auto"
               loading="lazy"
@@ -45,7 +45,7 @@ export default function BiorepoAboutSamplesContent() {
           <Card variant="outlined">
             <CardMedia
               component="img"
-              image="../images/card-images/IMG_9506.jpg"
+              image="../images/card-images/1D8A2241.jpg"
               title="Collections"
               height="auto"
               loading="lazy"
