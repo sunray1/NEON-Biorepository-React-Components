@@ -18,9 +18,6 @@ import RightIcon from '@material-ui/icons/ChevronRight';
 import Theme from '../lib_components/components/Theme/Theme';
 import SiteMap from '../lib_components/components/SiteMap/SiteMap';
 
-const CLIENT_ROOT = 'https://biokic4.rc.asu.edu/neon/portal';
-// const CLIENT_ROOT = 'http://localhost/neon';
-
 const useStyles = makeStyles((theme) => ({
   heroTitle: {
     width: '100%',
@@ -233,7 +230,7 @@ export default function BiorepoHomePageContent() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button variant="outlined" size="large" endIcon={<RightIcon />} href={`${CLIENT_ROOT}/misc/aboutsamples.php`}>
+                <Button variant="outlined" size="large" endIcon={<RightIcon />} href="misc/aboutsamples.php">
                   Learn About Samples
                 </Button>
               </CardActions>
@@ -257,7 +254,7 @@ export default function BiorepoHomePageContent() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button variant="outlined" size="large" endIcon={<RightIcon />} href={`${CLIENT_ROOT}/neon/search/index.php`}>
+                <Button variant="outlined" size="large" endIcon={<RightIcon />} href="neon/search/index.php">
                   Search Samples
                 </Button>
               </CardActions>
@@ -281,7 +278,7 @@ export default function BiorepoHomePageContent() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button variant="outlined" size="large" endIcon={<RightIcon />} href={`${CLIENT_ROOT}/misc/sampleservices.php`}>
+                <Button variant="outlined" size="large" endIcon={<RightIcon />} href="misc/sampleservices.php">
                   Request Services
                 </Button>
               </CardActions>
@@ -305,7 +302,7 @@ export default function BiorepoHomePageContent() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button variant="outlined" size="large" endIcon={<RightIcon />} href={`${CLIENT_ROOT}/misc/sampleguidelines.php`}>
+                <Button variant="outlined" size="large" endIcon={<RightIcon />} href="misc/sampleguidelines.php">
                   Read Guidelines
                 </Button>
               </CardActions>
@@ -329,7 +326,7 @@ export default function BiorepoHomePageContent() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button variant="outlined" size="large" endIcon={<RightIcon />} href={`${CLIENT_ROOT}/projects/browsechecklists.php`}>
+                <Button variant="outlined" size="large" endIcon={<RightIcon />} href="projects/browsechecklists.php">
                   Browse Checklists
                 </Button>
               </CardActions>
@@ -353,7 +350,7 @@ export default function BiorepoHomePageContent() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button variant="outlined" size="large" endIcon={<RightIcon />} href={`${CLIENT_ROOT}/misc/sampleanalysis.php`}>
+                <Button variant="outlined" size="large" endIcon={<RightIcon />} href="misc/sampleanalysis.php">
                   Work with Samples
                 </Button>
               </CardActions>
