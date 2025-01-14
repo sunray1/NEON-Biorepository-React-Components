@@ -8,23 +8,6 @@ import NeonPage from '../lib_components/components/NeonPage/NeonPage';
 export default function BiorepoPage() {
   const [config, setConfig] = useState(null);
 
-  const getDefaultSidebarLinks = () => {
-    if (window.location.pathname.endsWith('/publiclist.php')) {
-      return [
-        {
-          name: 'Papers & Publications',
-          hash: 'https://www.neonscience.org/impact/papers-publications',
-        },
-      ];
-    }
-    return [
-      {
-        name: 'Sample Portal',
-        hash: 'https://biokic4.rc.asu.edu/neon/portal/index.php',
-      },
-    ];
-  };
-
   // Get breadcrumbs and sidebar from json based on pathname
   const [breadcrumbs, setBreadcrumbs] = useState([]);
   const [sidebarLinks, setSidebarLinks] = useState([]);
@@ -66,7 +49,6 @@ export default function BiorepoPage() {
 
   useEffect(() => {
     if (!config) return;
-    setSidebarLinks(getDefaultSidebarLinks());
     const fetchBreadcrumbs = async () => {
       try {
         const response = await fetch(`${config.CLIENT_ROOT}/neon-react/biorepo_lib/breadcrumbs.json`);
@@ -94,9 +76,21 @@ export default function BiorepoPage() {
           throw new Error('Failed to fetch sidebar links');
         }
         const data = await response.json();
-        const pathname = window.location;
+        const { pathname } = window.location;
+        const filename = pathname.split('/').pop();
 
-        const sidebarData = data[pathname] || data.default;
+        const sidebarData = data[filename] || data.default;
+        if (data[pathname] === undefined) {
+          sidebarData.links = sidebarData.links.map((link) => {
+            if (link.name === 'Sample Portal') {
+              return {
+                ...link,
+                hash: `${config.CLIENT_ROOT}/${link.hash}`,
+              };
+            }
+            return link;
+          });
+        }
         setSidebarLinks(sidebarData.links);
         setSidebarTitle(sidebarData.sidebarTitle);
       } catch (error) {

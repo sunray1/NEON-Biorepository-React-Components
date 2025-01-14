@@ -418,8 +418,17 @@ const NeonPage = (props) => {
   const sidebarHashMap = !hasSidebarLinks ? {} : Object.fromEntries(
     sidebarLinks.map((link, idx) => [link.hash || '#', idx]),
   );
-  const initialCurrentSidebarHash = sidebarLinks[0].hash;
-  const [currentSidebarHash, setCurrentSidebarHash] = useState(initialCurrentSidebarHash);
+  const initialCurrentSidebarHash = (() => {
+    if (sidebarLinks.length === 5) {
+      return sidebarLinks[3].hash;
+    }
+    if (sidebarLinks.length === 7) {
+      return sidebarLinks[1].hash;
+    }
+    return '#';
+  })();
+  const currentSidebarHash = initialCurrentSidebarHash;
+  // const [currentSidebarHash, setCurrentSidebarHash] = useState(initialCurrentSidebarHash);
   const [hashInitialized, setHashInitialized] = useState(false);
   const [sidebarExpanded, setSidebarExpanded] = useState(false); // for small viewports only
 
@@ -441,7 +450,7 @@ const NeonPage = (props) => {
     const handleHashChange = () => {
       const { hash } = document.location;
       if (currentSidebarHash === hash) { return; }
-      setCurrentSidebarHash(hash);
+      // setCurrentSidebarHash(hash);
       // If standard sidebar mode (scroll to content) also perform the scroll offset here
       if (!sidebarLinksAsStandaloneChildren) {
         window.setTimeout(() => {
@@ -486,7 +495,7 @@ const NeonPage = (props) => {
           (curr.y !== -1 && window.scrollY >= curr.y - detectionBuffer) ? curr.hash : acc
         ), sidebarLinks[0].hash || '#');
       if (currentScrolledHash !== currentSidebarHash) {
-        setCurrentSidebarHash(currentScrolledHash);
+        // setCurrentSidebarHash(currentScrolledHash);
       }
     };
     window.addEventListener('scroll', handleScroll);
@@ -503,7 +512,7 @@ const NeonPage = (props) => {
     hashInitialized,
     setHashInitialized,
     currentSidebarHash,
-    setCurrentSidebarHash,
+    // setCurrentSidebarHash,
     sidebarLinksContainerRef,
     getSidebarLinkScrollPosition,
     sidebarLinksAsStandaloneChildren,
@@ -808,7 +817,7 @@ const NeonPage = (props) => {
           href={hash}
           onClick={(
             sidebarLinksAsStandaloneChildren ? () => {
-              setCurrentSidebarHash(hash);
+              // setCurrentSidebarHash(hash);
               if (sidebarExpanded) { setSidebarExpanded(false); }
             } : null
           )}
