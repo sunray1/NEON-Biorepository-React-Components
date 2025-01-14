@@ -51,7 +51,7 @@ function renderNode(nodes: any[], depth = 0) {
   return nodes.map((node, index) => {
     const isLastChild = index === nodes.length - 1;
     const collidLink = node.collid
-      ? `https://biokic4.rc.asu.edu/neon/portal/collections/misc/neoncollprofiles.php?collid=${node.collid}`
+      ? `neoncollprofiles.php?collid=${node.collid}`
       : null;
 
     const nodeContent = collidLink ? (
@@ -88,6 +88,7 @@ function renderNode(nodes: any[], depth = 0) {
 }
 
 export default function BiorepoCollectionsContent() {
+  const [config, setConfig] = useState(null);
   const [value, setValue] = React.useState(0);
   const [taxonomicNodesData, setTaxonomicNodes] = useState([]);
   const [sampletypeNodesData, setSampletypeNodes] = useState([]);
@@ -98,34 +99,68 @@ export default function BiorepoCollectionsContent() {
   };
 
   useEffect(() => {
-    fetch('/neon/portal/neon-react/biorepo_lib/collections-taxonomic.json')
-    // fetch('/neon/neon-react/biorepo_lib/collections-taxonomic.json')
+    // Fetch configuration from getSymbiniConfig.php
+    const fetchConfig = async () => {
+      const basePath = window.location.origin;
+      const currentPath = window.location.pathname.split('/').slice(0, -1).join('/');
+      const pathSegments = currentPath.split('/').filter(Boolean);
+      let clientRootPath = '/';
+      for (let i = 1; i <= pathSegments.length; i += 1) {
+        const candidatePath = `/${pathSegments.slice(0, i).join('/')}/neon-react`;
+        // Check if the resource exists (use HEAD request to test for existence)
+        const xhr = new XMLHttpRequest();
+        xhr.open('HEAD', `${basePath}${candidatePath}`, false);
+        xhr.send();
+        if (xhr.status === 200) {
+          clientRootPath = `/${pathSegments.slice(0, i).join('/')}`;
+          break;
+        }
+      }
+      const fetchUrl = `${basePath}${clientRootPath}/neon-react/biorepo_lib/getSymbiniConfig.php`;
+      try {
+        const response = await fetch(fetchUrl);
+        if (!response.ok) {
+          throw new Error('Failed to fetch configuration');
+        }
+        const data = await response.json();
+        setConfig(data);
+      } catch (error) {
+        console.error('Error fetching configuration:', error);
+      }
+    };
+
+    fetchConfig();
+  }, []);
+
+  useEffect(() => {
+    if (!config) return;
+    fetch(`${config.CLIENT_ROOT}/neon-react/biorepo_lib/collections-taxonomic.json`)
       .then((response) => response.json())
       .then((data) => {
         setTaxonomicNodes(data);
       })
       .catch((error) => console.error('Error loading nodes data:', error));
-  }, []);
+  }, [config]);
 
   useEffect(() => {
-    fetch('/neon/portal/neon-react/biorepo_lib/collections-sampletype.json')
-    // fetch('/neon/neon-react/biorepo_lib/collections-sampletype.json')
+    if (!config) return;
+    fetch(`${config.CLIENT_ROOT}/neon-react/biorepo_lib/collections-sampletype.json`)
       .then((response) => response.json())
       .then((data) => {
         setSampletypeNodes(data);
       })
       .catch((error) => console.error('Error loading nodes data:', error));
-  }, []);
+  }, [config]);
 
   useEffect(() => {
-    fetch('/neon/portal/neon-react/biorepo_lib/collections-protocol.json')
-    // fetch('/neon/neon-react/biorepo_lib/collections-protocol.json')
+    if (!config) return;
+    fetch(`${config.CLIENT_ROOT}/neon-react/biorepo_lib/collections-protocol.json`)
       .then((response) => response.json())
       .then((data) => {
         setProtocolNodes(data);
       })
       .catch((error) => console.error('Error loading nodes data:', error));
-  }, []);
+  }, [config]);
 
   return (
     <div>
