@@ -56,7 +56,7 @@ export default function BiorepoAboutSamplesContent() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button variant="outlined" size="large" endIcon={<RightIcon />} href="collections/misc/browsecollprofiles.php">
+              <Button variant="outlined" size="large" endIcon={<RightIcon />} href="../collections/misc/browsecollprofiles.php">
                 Explore Samples Types
               </Button>
             </CardActions>
