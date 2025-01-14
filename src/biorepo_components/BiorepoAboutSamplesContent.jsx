@@ -10,9 +10,6 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import RightIcon from '@material-ui/icons/ChevronRight';
 
-const CLIENT_ROOT = 'https://biokic4.rc.asu.edu/neon/portal';
-// const CLIENT_ROOT = 'http://localhost/neon';
-
 export default function BiorepoAboutSamplesContent() {
   return (
     <div id="callout-cards">
@@ -59,7 +56,7 @@ export default function BiorepoAboutSamplesContent() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button variant="outlined" size="large" endIcon={<RightIcon />} href={`${CLIENT_ROOT}/collections/misc/browsecollprofiles.php`}>
+              <Button variant="outlined" size="large" endIcon={<RightIcon />} href="collections/misc/browsecollprofiles.php">
                 Explore Samples Types
               </Button>
             </CardActions>
