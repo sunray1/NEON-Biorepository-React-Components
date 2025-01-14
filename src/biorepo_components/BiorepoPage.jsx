@@ -49,7 +49,6 @@ export default function BiorepoPage() {
         }
       }
       const fetchUrl = `${basePath}${clientRootPath}/neon-react/biorepo_lib/getSymbiniConfig.php`;
-      console.log(fetchUrl);
       try {
         const response = await fetch(fetchUrl);
         if (!response.ok) {
