@@ -13,9 +13,6 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandIcon from '@material-ui/icons/ExpandMore';
 import Link from '@material-ui/core/Link';
 
-// const CLIENT_ROOT = 'https://biokic4.rc.asu.edu/neon/portal';
-const CLIENT_ROOT = 'http://localhost/neon';
-
 function renderNode(nodes: any[], depth = 0) {
   return nodes.map((node, index) => {
     const isLastChild = index === nodes.length - 1;
