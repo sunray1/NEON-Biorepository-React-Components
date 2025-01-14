@@ -9,9 +9,6 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import RightIcon from '@material-ui/icons/ChevronRight';
 
-// const CLIENT_ROOT = 'http://localhost/neon';
-const CLIENT_ROOT = 'https://biokic4.rc.asu.edu/neon/portal';
-
 export default function BiorepoGuidelinesContent() {
   return (
     <div id="callout-cards">
@@ -27,7 +24,7 @@ export default function BiorepoGuidelinesContent() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button variant="outlined" size="large" endIcon={<RightIcon />} href={`${CLIENT_ROOT}/misc/samplepolicy.php`}>
+              <Button variant="outlined" size="large" endIcon={<RightIcon />} href="samplepolicy.php">
                 Read the Policies
               </Button>
             </CardActions>
@@ -44,7 +41,7 @@ export default function BiorepoGuidelinesContent() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button variant="outlined" size="large" endIcon={<RightIcon />} href={`${CLIENT_ROOT}/misc/cite.php`}>
+              <Button variant="outlined" size="large" endIcon={<RightIcon />} href="cite.php">
                 Cite Us
               </Button>
             </CardActions>
@@ -61,7 +58,7 @@ export default function BiorepoGuidelinesContent() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button variant="outlined" size="large" endIcon={<RightIcon />} href={`${CLIENT_ROOT}/misc/datasetpublishing.php`}>
+              <Button variant="outlined" size="large" endIcon={<RightIcon />} href="datasetpublishing.php">
                 Learn More
               </Button>
             </CardActions>
