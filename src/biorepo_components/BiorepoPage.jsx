@@ -24,11 +24,13 @@ export default function BiorepoPage() {
         const candidatePath = `/${pathSegments.slice(0, i).join('/')}/neon-react`;
         // Check if the resource exists (use HEAD request to test for existence)
         const xhr = new XMLHttpRequest();
-        xhr.open('HEAD', `${basePath}${candidatePath}`, false);
+        xhr.open('HEAD', `${basePath}${candidatePath}/biorepo_lib/getSymbiniConfig.php`, false);
         xhr.send();
         if (xhr.status === 200) {
           clientRootPath = `/${pathSegments.slice(0, i).join('/')}`;
           break;
+        } else if (xhr.status === 404) {
+          // pass
         }
       }
       const fetchUrl = `${basePath}${clientRootPath}/neon-react/biorepo_lib/getSymbiniConfig.php`;
