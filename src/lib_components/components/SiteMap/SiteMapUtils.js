@@ -1299,7 +1299,7 @@ export const getHref = (key, arg = null) => {
   ];
 
   const EXPLORE_DATA_PRODUCTS_BASE = RouteService.getDataProductExplorePath();
-  const CLIENT_ROOT = 'https://biokic4.rc.asu.edu/neon/portal';
+  const CLIENT_ROOT = 'https://biorepo.neonscience.org/prodreview';
   const EXPLORE_SAMPLE_PRODUCTS_BASE = `${CLIENT_ROOT}/collections/list.php`;
   if ((arg || '').length === 0) { return '#'; }
   switch (key) {
