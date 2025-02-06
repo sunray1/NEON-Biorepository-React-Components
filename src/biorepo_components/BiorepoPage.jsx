@@ -59,7 +59,7 @@ export default function BiorepoPage() {
         }
         const data = await response.json();
         const pathname = window.location.pathname.slice(config.CLIENT_ROOT.length);
-        const breadcrumbData = data[pathname] || [{ name: 'Home', href: '/' }];
+        const breadcrumbData = data[pathname] || [{ name: 'Data & Samples', href: 'https://www.neonscience.org/data-samples' }, { name: 'Sample Portal' }];
         setBreadcrumbs(breadcrumbData);
 
         const breadcrumbNav = document.querySelector('nav[data-selenium="neon-page.breadcrumbs"]');
