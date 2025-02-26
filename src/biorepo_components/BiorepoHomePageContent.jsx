@@ -81,7 +81,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#002C77',
     color: '#fff',
     marginTop: '10em',
-    right: '74px',
     '&::before': {
       content: '""',
       position: 'absolute',
