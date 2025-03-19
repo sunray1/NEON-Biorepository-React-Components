@@ -24,7 +24,7 @@ export default function BiorepoGuidelinesContent() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button variant="outlined" size="large" endIcon={<RightIcon />} href="samplepolicy.php">
+              <Button variant="outlined" size="large" endIcon={<RightIcon />} href="samplepolicy.php" style={{ color: '#0073CF', borderColor: '#0073CF' }}>
                 Read the Policies
               </Button>
             </CardActions>
@@ -41,7 +41,7 @@ export default function BiorepoGuidelinesContent() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button variant="outlined" size="large" endIcon={<RightIcon />} href="cite.php">
+              <Button variant="outlined" size="large" endIcon={<RightIcon />} href="cite.php" style={{ color: '#0073CF', borderColor: '#0073CF' }}>
                 Cite Us
               </Button>
             </CardActions>
@@ -58,7 +58,7 @@ export default function BiorepoGuidelinesContent() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button variant="outlined" size="large" endIcon={<RightIcon />} href="datasetpublishing.php">
+              <Button variant="outlined" size="large" endIcon={<RightIcon />} href="datasetpublishing.php" style={{ color: '#0073CF', borderColor: '#0073CF' }}>
                 Learn More
               </Button>
             </CardActions>

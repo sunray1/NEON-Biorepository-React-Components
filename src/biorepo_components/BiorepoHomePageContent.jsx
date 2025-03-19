@@ -229,7 +229,7 @@ export default function BiorepoHomePageContent() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button variant="outlined" size="large" endIcon={<RightIcon />} href="misc/aboutsamples.php">
+                <Button variant="outlined" size="large" endIcon={<RightIcon />} href="misc/aboutsamples.php" style={{ color: '#0073CF', borderColor: '#0073CF' }}>
                   Learn About Samples
                 </Button>
               </CardActions>
@@ -253,7 +253,7 @@ export default function BiorepoHomePageContent() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button variant="outlined" size="large" endIcon={<RightIcon />} href="neon/search/index.php">
+                <Button variant="outlined" size="large" endIcon={<RightIcon />} href="neon/search/index.php" style={{ color: '#0073CF', borderColor: '#0073CF' }}>
                   Search Samples
                 </Button>
               </CardActions>
@@ -277,7 +277,7 @@ export default function BiorepoHomePageContent() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button variant="outlined" size="large" endIcon={<RightIcon />} href="misc/sampleservices.php">
+                <Button variant="outlined" size="large" endIcon={<RightIcon />} href="misc/sampleservices.php" style={{ color: '#0073CF', borderColor: '#0073CF' }}>
                   Request Services
                 </Button>
               </CardActions>
@@ -301,7 +301,7 @@ export default function BiorepoHomePageContent() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button variant="outlined" size="large" endIcon={<RightIcon />} href="misc/sampleguidelines.php">
+                <Button variant="outlined" size="large" endIcon={<RightIcon />} href="misc/sampleguidelines.php" style={{ color: '#0073CF', borderColor: '#0073CF' }}>
                   Read Guidelines
                 </Button>
               </CardActions>
@@ -325,7 +325,7 @@ export default function BiorepoHomePageContent() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button variant="outlined" size="large" endIcon={<RightIcon />} href="projects/browsechecklists.php">
+                <Button variant="outlined" size="large" endIcon={<RightIcon />} href="projects/browsechecklists.php" style={{ color: '#0073CF', borderColor: '#0073CF' }}>
                   Browse Checklists
                 </Button>
               </CardActions>
@@ -349,7 +349,7 @@ export default function BiorepoHomePageContent() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button variant="outlined" size="large" endIcon={<RightIcon />} href="misc/sampleanalysis.php">
+                <Button variant="outlined" size="large" endIcon={<RightIcon />} href="misc/sampleanalysis.php" style={{ color: '#0073CF', borderColor: '#0073CF' }}>
                   Work with Samples
                 </Button>
               </CardActions>
@@ -359,7 +359,7 @@ export default function BiorepoHomePageContent() {
       </div>
       <div id="blue-div" className={classes.blueDiv}>
         <div id="statistics-container" style={{ position: 'relative', left: '74px' }}>
-          <Typography variant="h3" color="white" component="h3">
+          <Typography variant="h3" component="h3" style={{ color: 'white' }}>
             Statistics
           </Typography>
           <Grid id="statistics" container spacing={0.5} justifyContent="center" className={classes.statistics}>
