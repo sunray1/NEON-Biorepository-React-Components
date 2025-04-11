@@ -20,7 +20,14 @@ export default function BiorepoCollectionPageContent() {
         // Extract and filter specs based on "Protocol" in specDescription
         const allFilteredSpecs = responses.flatMap((response) => response.data?.specs?.filter((spec) => spec.specDescription.includes('Protocol and Procedure')) || []);
 
-        setFilteredSpecs(allFilteredSpecs);
+        const uniqueSpecsMap = new Map();
+        allFilteredSpecs.forEach((spec) => {
+          if (!uniqueSpecsMap.has(spec.specNumber)) {
+            uniqueSpecsMap.set(spec.specNumber, spec);
+          }
+        });
+
+        setFilteredSpecs(Array.from(uniqueSpecsMap.values()));
       } catch (error) {
         console.error('Error fetching product specs:', error);
       }
