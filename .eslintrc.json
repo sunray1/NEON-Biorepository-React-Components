@@ -47,7 +47,8 @@
     "react/jsx-props-no-spreading": 0,
     "react/self-closing-comp": "off",
     "no-restricted-exports": 0,
-    "no-shadow": "off"
+    "no-shadow": "off",
+    "max-len": "off"
   },
   "overrides": [
     {
